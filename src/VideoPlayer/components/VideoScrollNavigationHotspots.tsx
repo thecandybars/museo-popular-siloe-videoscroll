@@ -8,7 +8,6 @@ import type { VideoScrollNavigationHotspotsProps } from "../../types";
 
 export default function VideoScrollNavigationHotspots({
   item,
-  scrollyPosition,
   direction,
   endContentTitle,
   endContentTop,
@@ -26,7 +25,7 @@ export default function VideoScrollNavigationHotspots({
   const containerProps = item.isBlocking
     ? // Dialog props
       {
-        open: scrollyPosition > item.timeIn && direction === "up",
+        open: true,
         TransitionComponent: Transition,
         fullWidth: true,
         maxWidth: "xl" as const,
@@ -38,7 +37,7 @@ export default function VideoScrollNavigationHotspots({
       }
     : // Zoom props
       {
-        in: scrollyPosition > item.timeIn && scrollyPosition < item.timeOut,
+        in: true,
         timeout: 1200,
       };
 

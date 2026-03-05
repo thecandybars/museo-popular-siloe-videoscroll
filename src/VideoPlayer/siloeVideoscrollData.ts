@@ -7,7 +7,7 @@ import type { SceneRecord } from "../types";
 
 export const siloeVideoscrollData: SceneRecord = {
   A01: {
-    src: "/lugares/siloe/video/A01.mp4",
+    src: "/lugares/siloe/video/A01-pr.mp4",
     title: "Patoneando la memoria desde el Museo Popular de Siloé",
     speed: 800,
     type: "scroll",
@@ -37,8 +37,6 @@ export const siloeVideoscrollData: SceneRecord = {
     navigationHotspots: [
       {
         id: 1,
-        timeIn: 0.99,
-        timeOut: 1,
         isBlocking: true,
         links: [
           {
@@ -62,7 +60,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   A02: {
-    src: "/lugares/siloe/video/A02.mp4",
+    src: "/lugares/siloe/video/A02-pr.mp4",
     title: "Caminamos al cementerio San José",
     speed: 800,
     type: "scroll",
@@ -73,8 +71,6 @@ export const siloeVideoscrollData: SceneRecord = {
     navigationHotspots: [
       {
         id: 1,
-        timeIn: 0.99,
-        timeOut: 1,
         isBlocking: true,
         links: [
           {
@@ -128,8 +124,6 @@ export const siloeVideoscrollData: SceneRecord = {
     navigationHotspots: [
       {
         id: 1,
-        timeIn: 0.99,
-        timeOut: 1,
         isBlocking: true,
         links: [
           {
@@ -185,8 +179,6 @@ export const siloeVideoscrollData: SceneRecord = {
     navigationHotspots: [
       {
         id: 1,
-        timeIn: 0.99,
-        timeOut: 1,
         isBlocking: true,
         links: [
           {
@@ -240,8 +232,6 @@ export const siloeVideoscrollData: SceneRecord = {
     navigationHotspots: [
       {
         id: 1,
-        timeIn: 0.99,
-        timeOut: 1,
         isBlocking: true,
         links: [
           {
@@ -301,8 +291,6 @@ export const siloeVideoscrollData: SceneRecord = {
     navigationHotspots: [
       {
         id: 1,
-        timeIn: 0.99,
-        timeOut: 1,
         isBlocking: true,
         links: [
           {
@@ -357,8 +345,6 @@ export const siloeVideoscrollData: SceneRecord = {
     navigationHotspots: [
       {
         id: 1,
-        timeIn: 0.99,
-        timeOut: 1,
         isBlocking: true,
         links: [
           {
@@ -415,8 +401,6 @@ export const siloeVideoscrollData: SceneRecord = {
     navigationHotspots: [
       {
         id: 1,
-        timeIn: 0.99,
-        timeOut: 1,
         isBlocking: true,
         links: [
           {
@@ -472,8 +456,6 @@ export const siloeVideoscrollData: SceneRecord = {
     navigationHotspots: [
       {
         id: 1,
-        timeIn: 0.99,
-        timeOut: 1,
         isBlocking: true,
         links: [
           {
@@ -529,8 +511,6 @@ export const siloeVideoscrollData: SceneRecord = {
     navigationHotspots: [
       {
         id: 1,
-        timeIn: 0.99,
-        timeOut: 1,
         isBlocking: true,
         links: [
           {
@@ -574,8 +554,6 @@ export const siloeVideoscrollData: SceneRecord = {
     navigationHotspots: [
       {
         id: 1,
-        timeIn: 0.99,
-        timeOut: 1,
         isBlocking: true,
         links: [
           {
@@ -622,8 +600,6 @@ export const siloeVideoscrollData: SceneRecord = {
     navigationHotspots: [
       {
         id: 1,
-        timeIn: 0.99,
-        timeOut: 1,
         isBlocking: true,
         links: [
           {
@@ -682,8 +658,6 @@ export const siloeVideoscrollData: SceneRecord = {
     navigationHotspots: [
       {
         id: 1,
-        timeIn: 0.99,
-        timeOut: 1,
         isBlocking: true,
         links: [
           {
@@ -744,8 +718,6 @@ export const siloeVideoscrollData: SceneRecord = {
     navigationHotspots: [
       {
         id: 1,
-        timeIn: 0.99,
-        timeOut: 1,
         isBlocking: true,
         links: [
           {
@@ -824,8 +796,6 @@ export const siloeVideoscrollData: SceneRecord = {
     navigationHotspots: [
       {
         id: 1,
-        timeIn: 0.99,
-        timeOut: 1,
         isBlocking: true,
         links: [
           {
@@ -900,8 +870,6 @@ export const siloeVideoscrollData: SceneRecord = {
     navigationHotspots: [
       {
         id: 1,
-        timeIn: 0.98,
-        timeOut: 1,
         isBlocking: true,
         links: [
           {
@@ -973,8 +941,6 @@ export const siloeVideoscrollData: SceneRecord = {
     navigationHotspots: [
       {
         id: 1,
-        timeIn: 0.99,
-        timeOut: 1,
         isBlocking: true,
         links: [
           {
@@ -1032,8 +998,6 @@ export const siloeVideoscrollData: SceneRecord = {
     navigationHotspots: [
       {
         id: 1,
-        timeIn: 0.99,
-        timeOut: 1,
         isBlocking: true,
         links: [
           {
@@ -1088,8 +1052,6 @@ export const siloeVideoscrollData: SceneRecord = {
     navigationHotspots: [
       {
         id: 1,
-        timeIn: 0.99,
-        timeOut: 1,
         isBlocking: true,
         links: [
           {
@@ -1147,8 +1109,6 @@ export const siloeVideoscrollData: SceneRecord = {
     navigationHotspots: [
       {
         id: 1,
-        timeIn: 0.99,
-        timeOut: 1,
         isBlocking: true,
         links: [
           {
@@ -1198,8 +1158,6 @@ export const siloeVideoscrollData: SceneRecord = {
     navigationHotspots: [
       {
         id: 1,
-        timeIn: 0.99,
-        timeOut: 1,
         isBlocking: true,
         links: [
           {
@@ -1257,8 +1215,6 @@ export const siloeVideoscrollData: SceneRecord = {
     navigationHotspots: [
       {
         id: 1,
-        timeIn: 0.98,
-        timeOut: 1,
         isBlocking: true,
         links: [
           {
@@ -1315,8 +1271,6 @@ export const siloeVideoscrollData: SceneRecord = {
     navigationHotspots: [
       {
         id: 1,
-        timeIn: 0.99,
-        timeOut: 1,
         isBlocking: true,
         links: [
           {
@@ -1367,8 +1321,6 @@ export const siloeVideoscrollData: SceneRecord = {
     navigationHotspots: [
       {
         id: 1,
-        timeIn: 0.99,
-        timeOut: 1,
         isBlocking: true,
         links: [
           {
@@ -1423,8 +1375,6 @@ export const siloeVideoscrollData: SceneRecord = {
     navigationHotspots: [
       {
         id: 1,
-        timeIn: 0.99,
-        timeOut: 1,
         isBlocking: true,
         links: [
           {
@@ -1475,8 +1425,6 @@ export const siloeVideoscrollData: SceneRecord = {
     navigationHotspots: [
       {
         id: 1,
-        timeIn: 0.99,
-        timeOut: 1,
         isBlocking: true,
         links: [
           {

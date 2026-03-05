@@ -6,9 +6,9 @@ import { ThemeProvider } from "@mui/material";
 import { muiTheme } from "./utils/theme.ts";
 
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <ThemeProvider theme={muiTheme}>
-      <App />
-    </ThemeProvider>
-  </StrictMode>,
+  // <StrictMode>
+  <ThemeProvider theme={muiTheme}>
+    <App />
+  </ThemeProvider>,
+  // </StrictMode>,
 );

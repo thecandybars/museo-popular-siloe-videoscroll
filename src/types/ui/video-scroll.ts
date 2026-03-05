@@ -18,7 +18,6 @@ export interface VideoScrollFooterProps {
 
 export interface VideoScrollNavigationHotspotsProps {
   item: Hotspot;
-  scrollyPosition: number;
   direction: WheelDirection;
   endContentTitle?: string | false;
   endContentTop?: EndContent | false;
