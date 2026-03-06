@@ -40,7 +40,7 @@ export const siloeVideoscrollData: SceneRecord = {
         isBlocking: true,
         links: [
           {
-            direction: "forward",
+            direction: "right",
             title: "Al cementerio San Jose De Siloé",
             href: "/A02",
           },
@@ -74,7 +74,7 @@ export const siloeVideoscrollData: SceneRecord = {
         isBlocking: true,
         links: [
           {
-            direction: "forward",
+            direction: "up",
             title: "Entrar al Cementerio San Jose De Siloé",
             href: "/A03",
           },
@@ -127,7 +127,7 @@ export const siloeVideoscrollData: SceneRecord = {
         isBlocking: true,
         links: [
           {
-            direction: "forward",
+            direction: "down",
             title: "Mural del cementerio San Jose De Siloé",
             href: "/A04",
           },
@@ -182,7 +182,7 @@ export const siloeVideoscrollData: SceneRecord = {
         isBlocking: true,
         links: [
           {
-            direction: "forward",
+            direction: "up",
             title: "Por la Diagonal 51 hacia La Sorpresa",
             href: "/A05",
           },
@@ -235,7 +235,7 @@ export const siloeVideoscrollData: SceneRecord = {
         isBlocking: true,
         links: [
           {
-            direction: "forward",
+            direction: "up",
             title: "Seguimos a la glorieta de Siloé",
             href: "/A07",
           },
@@ -294,7 +294,7 @@ export const siloeVideoscrollData: SceneRecord = {
         isBlocking: true,
         links: [
           {
-            direction: "forward",
+            direction: "up",
             title: "Galería de Siloé",
             href: "/A08",
           },
@@ -348,7 +348,7 @@ export const siloeVideoscrollData: SceneRecord = {
         isBlocking: true,
         links: [
           {
-            direction: "forward",
+            direction: "up",
             title: "Glorieta 'Siloé resiste'",
             href: "/A09",
           },
@@ -404,7 +404,7 @@ export const siloeVideoscrollData: SceneRecord = {
         isBlocking: true,
         links: [
           {
-            direction: "forward",
+            direction: "up",
             title: "Incendio del Dollar City",
             href: "/A10",
           },
@@ -459,7 +459,7 @@ export const siloeVideoscrollData: SceneRecord = {
         isBlocking: true,
         links: [
           {
-            direction: "forward",
+            direction: "up",
             title: "Camino hacia el parque de la Horqueta",
             href: "/A11",
           },
@@ -514,7 +514,7 @@ export const siloeVideoscrollData: SceneRecord = {
         isBlocking: true,
         links: [
           {
-            direction: "forward",
+            direction: "up",
             title: "Hacia el parque de la Mina",
             href: "/B01",
           },
@@ -557,7 +557,7 @@ export const siloeVideoscrollData: SceneRecord = {
         isBlocking: true,
         links: [
           {
-            direction: "forward",
+            direction: "up",
             title: "Hacia el mural Yo amo a Siloé",
             href: "/B02",
           },
@@ -603,7 +603,7 @@ export const siloeVideoscrollData: SceneRecord = {
         isBlocking: true,
         links: [
           {
-            direction: "forward",
+            direction: "up",
             title: "Mirador Yo amo a Siloé",
             href: "/B03",
           },
@@ -666,7 +666,7 @@ export const siloeVideoscrollData: SceneRecord = {
             href: "/B04_V3",
           },
           {
-            direction: "forward",
+            direction: "up",
             title: "Hacia Estacion de Mio Cable",
             href: "/B04_V1",
           },
@@ -721,7 +721,7 @@ export const siloeVideoscrollData: SceneRecord = {
         isBlocking: true,
         links: [
           {
-            direction: "forward",
+            direction: "up",
             title: "Tomamos el Mio Cable",
             href: "/C02v1b",
           },
@@ -799,7 +799,7 @@ export const siloeVideoscrollData: SceneRecord = {
         isBlocking: true,
         links: [
           {
-            direction: "forward",
+            direction: "up",
             title: "Hacia La Estrella caminando",
             href: "/B05_V2",
           },
@@ -873,7 +873,7 @@ export const siloeVideoscrollData: SceneRecord = {
         isBlocking: true,
         links: [
           {
-            direction: "forward",
+            direction: "up",
             title: "Hacia La Estrella con los arrieros",
             href: "/B05_V3",
           },
@@ -944,7 +944,7 @@ export const siloeVideoscrollData: SceneRecord = {
         isBlocking: true,
         links: [
           {
-            direction: "forward",
+            direction: "up",
             title: "A pie hacia el campamento del M19",
             href: "/B06_V2",
           },
@@ -1001,7 +1001,7 @@ export const siloeVideoscrollData: SceneRecord = {
         isBlocking: true,
         links: [
           {
-            direction: "forward",
+            direction: "up",
             title: "Bajamos a caballo al campamento de la guerrilla M-19",
             href: "/B06_V3",
           },
@@ -1055,7 +1055,7 @@ export const siloeVideoscrollData: SceneRecord = {
         isBlocking: true,
         links: [
           {
-            direction: "forward",
+            direction: "up",
             title: "Caminar hacia el Monumento a la Opresión",
             href: "/B07_V2",
           },
@@ -1112,7 +1112,7 @@ export const siloeVideoscrollData: SceneRecord = {
         isBlocking: true,
         links: [
           {
-            direction: "forward",
+            direction: "up",
             title: "Caminar hacia el Monumento a la Opresión",
             href: "/B07_V2",
           },
@@ -1161,7 +1161,7 @@ export const siloeVideoscrollData: SceneRecord = {
         isBlocking: true,
         links: [
           {
-            direction: "forward",
+            direction: "up",
             title: "Casa de Jaqueline Rentería",
             href: "/B08",
           },
@@ -1218,7 +1218,7 @@ export const siloeVideoscrollData: SceneRecord = {
         isBlocking: true,
         links: [
           {
-            direction: "forward",
+            direction: "up",
             title: "Estación de Mio Cable",
             href: "/C02v1c",
           },
@@ -1274,7 +1274,7 @@ export const siloeVideoscrollData: SceneRecord = {
         isBlocking: true,
         links: [
           {
-            direction: "forward",
+            direction: "up",
             title: "La Cascada",
             href: "/B10",
           },
@@ -1324,7 +1324,7 @@ export const siloeVideoscrollData: SceneRecord = {
         isBlocking: true,
         links: [
           {
-            direction: "forward",
+            direction: "up",
             title: "Balcon hacia Brisas de Mayo",
             href: "/B11",
           },
@@ -1378,7 +1378,7 @@ export const siloeVideoscrollData: SceneRecord = {
         isBlocking: true,
         links: [
           {
-            direction: "forward",
+            direction: "up",
             title: "Estación de Mio Cable",
             href: "/C01",
           },

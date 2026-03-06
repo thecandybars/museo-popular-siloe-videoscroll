@@ -11,8 +11,10 @@ export { default as DocumentIconOutlined } from "@mui/icons-material/TextSnippet
 export { default as SoundOffIcon } from "@mui/icons-material/VolumeMute";
 export { default as SoundOnIcon } from "@mui/icons-material/VolumeUp";
 export { default as HelpIcon } from "@mui/icons-material/QuestionMark";
-export { default as DirectionUp } from "@mui/icons-material/KeyboardArrowUp";
+export { default as DirectionUp } from "@mui/icons-material/KeyboardDoubleArrowUp";
+export { default as DirectionDown } from "@mui/icons-material/KeyboardDoubleArrowDown";
+export { default as DirectionLeft } from "@mui/icons-material/KeyboardDoubleArrowLeft";
+export { default as DirectionRight } from "@mui/icons-material/KeyboardDoubleArrowRight";
 export { default as Location } from "@mui/icons-material/MyLocation";
-export { default as DirectionRight } from "@mui/icons-material/ArrowForwardIos";
 // CUSTOM ICONS
 // export { default as MarkerMuseoMemoria } from "./customIcons/MarkerMuseoMemoria.jsx";

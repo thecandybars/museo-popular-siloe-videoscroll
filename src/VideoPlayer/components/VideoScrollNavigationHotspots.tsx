@@ -4,6 +4,8 @@ import type { ElementType, ForwardedRef, ReactElement } from "react";
 import type { TransitionProps } from "@mui/material/transitions";
 import DirectionButton from "./DirectionButton";
 import type { VideoScrollNavigationHotspotsProps } from "../../types";
+import VideoScrollContents from "./VideoScrollContents";
+import DirectionalMenu from "./DirectionalMenu";
 // import VideoScrollContents from "./VideoScrollContents";
 
 export default function VideoScrollNavigationHotspots({
@@ -13,13 +15,12 @@ export default function VideoScrollNavigationHotspots({
   endContentTop,
   endContentBottom,
 }: VideoScrollNavigationHotspotsProps) {
-  const navButtons = (
-    <Stack justifyContent={"center"} alignItems={"center"} gap={1}>
-      {item.links?.map((link) => (
-        <DirectionButton key={link.direction} link={link} />
-      ))}
-    </Stack>
-  );
+  const navPills = item.links?.map((link) => ({
+    [link.direction]: {
+      label: link.title,
+      link: link.href,
+    },
+  }));
 
   const Container: ElementType = item.isBlocking ? Dialog : Zoom;
   const containerProps = item.isBlocking
@@ -53,9 +54,16 @@ export default function VideoScrollNavigationHotspots({
           }}
           gap={2}
         >
-          <Typography variant="h2" align="center" color={"primary"}>
+          <DirectionalMenu
+            centerLabel="¿HACIA DONDE QUIERES IR?"
+            {...navPills[0]}
+            {...navPills[1]}
+            {...navPills[2]}
+            {...navPills[3]}
+          />
+          {/* <Typography variant="h2" align="center" color={"primary"}>
             {endContentTitle}
-          </Typography>
+          </Typography> */}
           <Box
             display={"flex"}
             justifyContent={"center"}
@@ -64,9 +72,9 @@ export default function VideoScrollNavigationHotspots({
           >
             {/* CONTENIDO ADICIONAL al final del scroll (AKA Paradas) */}
             {/* Necesita mas trabajo : se esta renderizando para cualquier hotspot, deberia solo renderizarse al final */}
-            {/* {endContentTop && <VideoScrollContents content={endContentTop} />} */}
+            {/* {endContentTop && <VideoScrollContents content={endContentTop} />}
             {navButtons}
-            {/* {endContentBottom && (
+            {endContentBottom && (
               <VideoScrollContents content={endContentBottom} />
             )} */}
           </Box>

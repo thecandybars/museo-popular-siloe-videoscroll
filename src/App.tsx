@@ -17,7 +17,8 @@ const NotFoundPage = () => (
 );
 
 const getNextSrc = (scene: ScrollScene): string | undefined => {
-  const lastHotspot = scene.navigationHotspots[scene.navigationHotspots.length - 1];
+  const lastHotspot =
+    scene.navigationHotspots[scene.navigationHotspots.length - 1];
   if (!lastHotspot || lastHotspot.links.length !== 1) return undefined;
 
   const nextId = lastHotspot.links[0].href.replace(/^\/+/, "") as SceneId;
@@ -25,7 +26,10 @@ const getNextSrc = (scene: ScrollScene): string | undefined => {
 };
 
 const App = () => {
-  const sceneEntries = Object.entries(siloeVideoscrollData) as [SceneId, Scene][];
+  const sceneEntries = Object.entries(siloeVideoscrollData) as [
+    SceneId,
+    Scene,
+  ][];
 
   const router = createBrowserRouter(
     createRoutesFromElements(

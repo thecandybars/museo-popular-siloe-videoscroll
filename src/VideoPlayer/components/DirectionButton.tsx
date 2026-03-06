@@ -11,7 +11,7 @@ export default function DirectionButton({ link }: DirectionButtonProps) {
 
   const styles = {
     button:
-      link.direction === "forward"
+      link.direction === "up"
         ? {
             flexDirection: "column",
           }
@@ -23,7 +23,7 @@ export default function DirectionButton({ link }: DirectionButtonProps) {
               flexDirection: "row-reverse",
             },
     icon:
-      link.direction === "forward"
+      link.direction === "up"
         ? {
             rotate: "0deg",
           }

@@ -1,4 +1,4 @@
-export type HotspotDirection = "forward" | "left" | "right";
+export type HotspotDirection = "up" | "down" | "left" | "right";
 
 export interface HotspotLink {
   direction: HotspotDirection;
