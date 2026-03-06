@@ -1,4 +1,4 @@
-import { Box, Button, Dialog, Typography } from "@mui/material";
+import { Box, Button, Dialog, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 import VideoScrollMap from "./VideoScrollMap";
 import VideoScrollAudioPlayer from "./VideoScrollAudioPlayer";
@@ -14,71 +14,114 @@ export default function VideoScrollFooter({
   // HELP
   const [openHelp, setOpenHelp] = useState(false);
   const renderHelpDialog = (
-    <Dialog open={openHelp} onClose={() => setOpenHelp(false)}>
-      <Button
-        onClick={() => setOpenHelp(false)}
+    <Dialog
+      open={openHelp}
+      onClose={() => setOpenHelp(false)}
+      sx={{
+        "& .MuiPaper-root": {
+          background: "transparent", // Makes the dialog content background transparent
+        },
+      }}
+    >
+      <Stack
+        p={4}
+        gap={4}
+        alignItems={"center"}
         sx={{
-          position: "absolute",
-          right: "0px",
-          top: 0,
-          p: 0.5,
-          minWidth: 0,
-          color: "black",
+          color: "white",
+          bgcolor: "transparent",
+          backdropFilter: "blur(16px)",
+          WebkitBackdropFilter: "blur(16px)",
         }}
       >
-        <CancelIcon />
-      </Button>
-      <Box display={"flex"} flexDirection={"column"} p={2}>
-        <Box display="flex" alignItems={"center"} gap={2}>
-          <img src="/scroll.png" height="100px" width="100px" />
-          <Typography variant="h5" color="black">
-            Desplázate hacia arriba o hacia abajo para recorrer las calles de
-            Siloé
-          </Typography>
-        </Box>
-      </Box>
+        <img src="/navegacion.svg" height="100px" width="100px" />
+        <Typography
+          variant="h5"
+          sx={{ textAlign: "center", fontSize: "1.2rem", px: 10 }}
+        >
+          Usa el scroll o desplaza hacia arriba o hacia abajo para recorrer la
+          memoria de Siloé
+        </Typography>
+        <Button
+          variant="outlined"
+          onClick={() => setOpenHelp(false)}
+          sx={{
+            px: 3,
+            py: 1,
+            minWidth: 0,
+            borderRadius: "99px",
+          }}
+        >
+          Continuar
+        </Button>
+      </Stack>
     </Dialog>
   );
   return (
-    <Box
+    <Stack
+      gap={4}
       width={1}
       display="flex"
-      justifyContent={"space-between"}
+      flexDirection={"row"}
       alignItems={"end"}
-      sx={{ position: "fixed", bottom: 0, left: 0 }}
+      sx={{ position: "fixed", bottom: 0, left: 0, p: 3 }}
     >
       <VideoScrollMap map={map} progress={progress} />
-      <Box
-        display="flex"
+      <Stack
+        direction="row"
         alignItems="center"
-        justifyContent="space-between"
-        width={1}
-        px={1}
-        sx={{ bgcolor: "black" }}
+        justifyContent={"space-between"}
+        gap={4}
+        sx={{ width: "100%" }}
       >
-        <Typography variant="h4" color="white">
+        <Typography
+          variant="h4"
+          color="white"
+          sx={{
+            display: "flex",
+            flex: 0.9,
+            py: 3,
+            px: 3,
+            bgcolor: "#00000080",
+            backdropFilter: "blur(32px)",
+            WebkitBackdropFilter: "blur(32px)",
+            borderRadius: "99px",
+          }}
+        >
           {title}
         </Typography>
-        <Box display="flex" alignItems="center" gap={2}>
+        <Stack
+          direction="row"
+          alignItems="center"
+          gap={1}
+          sx={{
+            py: 2,
+            px: 3,
+            bgcolor: "#00000080",
+            backdropFilter: "blur(32px)",
+            WebkitBackdropFilter: "blur(32px)",
+            borderRadius: "99px",
+          }}
+        >
+          <VideoScrollAudioPlayer src={audioSrc} />
           <Button
             sx={{
-              color: "white",
-              border: "8px solid black",
-              bgcolor: "gray",
-              fontSize: "1.5rem",
-              width: 60,
-              height: 60,
+              border: "0.5px solid #FCFAF5",
+              bgcolor: "transparent",
+              p: 1,
+              width: 32,
+              height: 32,
+              minWidth: 32,
+              minHeight: 32,
               borderRadius: "100%",
             }}
             onClick={() => setOpenHelp((prev) => !prev)}
           >
-            <HelpIcon />
+            <HelpIcon fontSize="small" sx={{ color: "#ffffff80" }} />
           </Button>
-          <VideoScrollAudioPlayer src={audioSrc} />
-          <Button>Salir</Button>
-        </Box>
-        {renderHelpDialog}
-      </Box>
-    </Box>
+        </Stack>
+      </Stack>
+      {renderHelpDialog}
+    </Stack>
   );
 }

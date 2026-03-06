@@ -1,26 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import useWheelCounter from "../hooks/useWheelCounter";
 import VideoScrollNavigationHotspots from "./components/VideoScrollNavigationHotspots";
-// import ScrollyVideo from "scrolly-video";
 import ScrollyVideo from "scrolly-video/dist/ScrollyVideo.esm.jsx";
-
 import VideoScrollFooter from "./components/VideoScrollFooter";
 import LoadingAnimation from "./components/LoadingAnimation";
 import type { ScrollScene, WheelDirection } from "../types";
-// import LazyLoad from "react-lazyload";
 
 interface VideoScrollProps extends ScrollScene {
   nextSrc?: string;
 }
 
-export default function VideoScroll(props: VideoScrollProps) {
-  // Esta funcion existe solo para resetear el scroll antes de cargar la pagina de VideoScroll y evitar re-renderizados
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [props.src]);
-  return <Page {...props} />;
-}
-function Page({
+export default function VideoScroll({
   src,
   nextSrc,
   speed,
@@ -48,7 +38,7 @@ function Page({
 
   // Cleanup video on unmount
   useEffect(() => {
-    console.log("Scene changed, resetting state and cleaning up videos.");
+    window.scrollTo(0, 0);
     setLoading(true);
     setScrollyPosition(0);
     setShowHotspots(false);
@@ -65,7 +55,6 @@ function Page({
       preloaderRef.current = null;
     }
     return () => {
-      console.log("Cleaning up videos on unmount.");
       const videoElements: NodeListOf<HTMLVideoElement> | HTMLVideoElement[] =
         containerRef.current?.querySelectorAll("video") ?? [];
       videoElements.forEach((video) => {
@@ -137,7 +126,6 @@ function Page({
       );
     });
   return (
-    // <LazyLoad once unmountIfInvisible={false}>
     <div
       ref={containerRef}
       className="scrolly-container"
@@ -147,7 +135,7 @@ function Page({
         backgroundColor: "#000",
       }}
     >
-      {/* Conditional Loading */}
+      {/* Loading */}
       <LoadingAnimation open={loading} />
       {/* Video Content */}
       {src && (
@@ -164,7 +152,6 @@ function Page({
             if (currentTime >= 0.999) setShowHotspots(true);
           }}
           onReady={() => {
-            console.log("Video ready");
             readyRafRef.current = requestAnimationFrame(() => {
               setLoading(false);
               readyRafRef.current = null;
@@ -187,6 +174,5 @@ function Page({
         audioSrc={audioBackground?.src}
       />
     </div>
-    // </LazyLoad>
   );
 }

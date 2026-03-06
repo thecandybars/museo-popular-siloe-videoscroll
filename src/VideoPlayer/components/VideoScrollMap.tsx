@@ -1,23 +1,21 @@
 import { Box } from "@mui/material";
 import type { VideoScrollMapProps } from "../../types";
+import MapaConRuta from "./MapaConRuta";
 // import MapaConRuta from "./MapaConRuta";
 
 export default function VideoScrollMap({ map, progress }: VideoScrollMapProps) {
   return (
     <Box
-      marginTop={1}
       sx={{
-        border: `3px solid black`,
         zIndex: 1000,
       }}
     >
-      {/* <MapaConRuta
+      <MapaConRuta
         points={map.points.map((point) => [point[1], point[0]])}
         progress={progress}
-        width={200}
-        height={200}
-        zoom={map.zoom || 17}
-      /> */}
+        width={152}
+        height={152}
+      />
     </Box>
   );
 }

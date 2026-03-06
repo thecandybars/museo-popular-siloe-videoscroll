@@ -1,9 +1,11 @@
 import { useRef, useMemo, useState, useEffect } from "react";
-import Map, { Marker, Source, Layer } from "react-map-gl";
+import Map, { Layer, Marker, Source } from "react-map-gl/mapbox";
+import type { MapRef } from "react-map-gl/mapbox";
 import "mapbox-gl/dist/mapbox-gl.css";
 import getEnv from "../../utils/getEnv";
 import { theme } from "../../utils/theme";
 import { WebMercatorViewport } from "viewport-mercator-project";
+import type { Feature, LineString } from "geojson";
 import type { Coordinate, MapaConRutaProps } from "../../types";
 
 const MAPBOX_TOKEN = getEnv("mapboxToken");
@@ -65,7 +67,7 @@ function getPositionAtDistance(
 }
 
 const MapaConRuta = ({ points, progress, width, height }: MapaConRutaProps) => {
-  const mapRef = useRef<unknown>(null);
+  const mapRef = useRef<MapRef | null>(null);
 
   const [viewState, setViewState] = useState({
     longitude: 0,
@@ -78,8 +80,9 @@ const MapaConRuta = ({ points, progress, width, height }: MapaConRutaProps) => {
       return { routeGeoJSON: null, cumulativeDistances: [] };
     }
 
-    const routeGeoJSON = {
+    const routeGeoJSON: Feature<LineString> = {
       type: "Feature",
+      properties: {},
       geometry: {
         type: "LineString",
         coordinates: points,
@@ -108,7 +111,7 @@ const MapaConRuta = ({ points, progress, width, height }: MapaConRutaProps) => {
           [minLng, minLat],
           [maxLng, maxLat],
         ],
-        { padding: 50 }
+        { padding: 50 },
       );
 
       // Update the controlled viewState
@@ -129,19 +132,19 @@ const MapaConRuta = ({ points, progress, width, height }: MapaConRutaProps) => {
   const currentPosition = getPositionAtDistance(
     points,
     cumulativeDistances,
-    progress * totalDistance
+    progress * totalDistance,
   );
 
   return (
     <Map
       ref={mapRef}
       {...viewState}
-      style={{ width, height }}
+      style={{ width, height, borderRadius: "10px" }}
       mapStyle="mapbox://styles/mapbox/streets-v11"
       mapboxAccessToken={MAPBOX_TOKEN}
-      onMove={(evt: { viewState: { longitude: number; latitude: number; zoom: number } }) =>
-        setViewState(evt.viewState)
-      }
+      onMove={(evt: {
+        viewState: { longitude: number; latitude: number; zoom: number };
+      }) => setViewState(evt.viewState)}
     >
       <Source id="route" type="geojson" data={routeGeoJSON}>
         <Layer
@@ -161,7 +164,7 @@ const MapaConRuta = ({ points, progress, width, height }: MapaConRutaProps) => {
       <Marker longitude={points[0][0]} latitude={points[0][1]}>
         <div
           style={{
-            backgroundColor: theme.palette.secondary.main,
+            backgroundColor: "#6FC9C3",
             borderRadius: "50%",
             width: 15,
             height: 15,
@@ -175,7 +178,7 @@ const MapaConRuta = ({ points, progress, width, height }: MapaConRutaProps) => {
       >
         <div
           style={{
-            backgroundColor: theme.palette.secondary.main,
+            backgroundColor: "#6FC9C3",
             borderRadius: "50%",
             width: 15,
             height: 15,

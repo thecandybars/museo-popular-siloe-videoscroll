@@ -1,7 +1,8 @@
 // MUI ICONS
 export { default as CancelIcon } from "@mui/icons-material/Cancel";
 export { default as ExpandIcon } from "@mui/icons-material/PlayArrow";
-export { default as InfoIcon } from "@mui/icons-material/Info";
+export { default as InfoIcon } from "@mui/icons-material/InfoOutlined";
+export { default as LogoutIcon } from "@mui/icons-material/Logout";
 export { default as NavigateNextIcon } from "@mui/icons-material/NavigateNext";
 export { default as PhotoIconOutlined } from "@mui/icons-material/PhotoSizeSelectActualOutlined";
 export { default as VideoIconOutlined } from "@mui/icons-material/SlideshowOutlined";

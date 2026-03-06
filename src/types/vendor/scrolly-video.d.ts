@@ -1,5 +1,5 @@
 declare module "scrolly-video/dist/ScrollyVideo.esm.jsx" {
-  import type { FC } from "react";
+  import * as React from "react";
 
   export interface ScrollyVideoProps {
     src: string;
@@ -10,6 +10,6 @@ declare module "scrolly-video/dist/ScrollyVideo.esm.jsx" {
     debug?: boolean;
   }
 
-  const ScrollyVideo: FC<ScrollyVideoProps>;
+  const ScrollyVideo: React.FC<ScrollyVideoProps>;
   export default ScrollyVideo;
 }

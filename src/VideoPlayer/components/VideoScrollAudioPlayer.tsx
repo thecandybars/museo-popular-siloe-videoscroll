@@ -54,27 +54,36 @@ export default function VideoScrollAudioPlayer({
 
 const MuteButton = ({ isOn, onClick }: MuteButtonProps) => {
   const [icon, setIcon] = useState<ReactElement>(
-    isOn ? <SoundOnIcon /> : <SoundOffIcon />,
+    isOn ? (
+      <SoundOnIcon fontSize="small" sx={{ color: "#ffffff80" }} />
+    ) : (
+      <SoundOffIcon fontSize="small" sx={{ color: "#ffffff80" }} />
+    ),
   );
   // const [isHover, setIsHover] = useState(false);
   const handleOnClick = () => {
     onClick();
-    setIcon(isOn ? <SoundOffIcon /> : <SoundOnIcon />);
+    setIcon(
+      isOn ? (
+        <SoundOffIcon fontSize="small" sx={{ color: "#ffffff80" }} />
+      ) : (
+        <SoundOnIcon fontSize="small" sx={{ color: "#ffffff80" }} />
+      ),
+    );
   };
 
   return (
     <Button
       onClick={handleOnClick}
-      // onMouseEnter={() => setIsHover(true)}
-      // onMouseLeave={() => setIsHover(false)}
       sx={{
-        width: 60,
-        height: 60,
-        borderRadius: "50%",
-        border: "8px solid black",
-        bgcolor: "gray",
-        fontSize: "2.5rem",
-        // border: isHover ? "8px solid gray" : "8px solid black",
+        border: "0.5px solid #FCFAF5",
+        bgcolor: "transparent",
+        p: 1,
+        width: 32,
+        height: 32,
+        minWidth: 32,
+        minHeight: 32,
+        borderRadius: "100%",
       }}
     >
       {icon}
