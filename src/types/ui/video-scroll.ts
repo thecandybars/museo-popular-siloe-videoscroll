@@ -22,6 +22,7 @@ export interface VideoScrollNavigationHotspotsProps {
   endContentTitle?: string | false;
   endContentTop?: EndContent | false;
   endContentBottom?: EndContent | false;
+  setScrollyPosition: (position: number) => void;
 }
 
 export interface VideoScrollMapProps {

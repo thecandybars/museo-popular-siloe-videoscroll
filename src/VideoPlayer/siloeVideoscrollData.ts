@@ -7,7 +7,7 @@ import type { SceneRecord } from "../types";
 
 export const siloeVideoscrollData: SceneRecord = {
   A01: {
-    src: "/lugares/siloe/video/A01-pr.mp4",
+    src: "/lugares/siloe/video/A01.mp4",
     title: "Patoneando la memoria desde el Museo Popular de Siloé",
     speed: 800,
     type: "scroll",
@@ -60,7 +60,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   A02: {
-    src: "/lugares/siloe/video/A02-pr.mp4",
+    src: "/lugares/siloe/video/A02.mp4",
     title: "Caminamos al cementerio San José",
     speed: 800,
     type: "scroll",
@@ -690,7 +690,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   B04_V1: {
-    src: "/lugares/siloe/video/B04_V1.mp4",
+    src: "/lugares/siloe/video/B04v1.mp4",
     speed: 800,
     type: "scroll",
     title: "Subimos a la estación del cable y terminamos la ruta",
@@ -747,7 +747,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   B04_V2: {
-    src: "/lugares/siloe/video/B04_V2.mp4",
+    src: "/lugares/siloe/video/B04v2.mp4",
     speed: 800,
     type: "scroll",
     title: "Seguimos caminando por las escaleras hacia la estrella",
@@ -821,7 +821,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   B04_V3: {
-    src: "/lugares/siloe/video/B04_V3.mp4",
+    src: "/lugares/siloe/video/B04v3.mp4",
     speed: 800,
     type: "scroll",
     title: "Acompañamos a los arrieros hacia la estrella",
@@ -966,7 +966,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   B05_V3: {
-    src: "/lugares/siloe/video/B05_V3.mp4",
+    src: "/lugares/siloe/video/B05v3.mp4",
     speed: 800,
     type: "scroll",
     title: "Hacia La Estrella con los arrieros",
@@ -1023,7 +1023,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   B06_V2: {
-    src: "/lugares/siloe/video/B06_V2.mp4",
+    src: "/lugares/siloe/video/B06v2.mp4",
     speed: 800,
     type: "scroll",
     title: "Al campamento del M19",
@@ -1080,7 +1080,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   B06_V3: {
-    src: "/lugares/siloe/video/B06_V3.mp4",
+    src: "/lugares/siloe/video/B06v3.mp4",
     speed: 800,
     type: "scroll",
     title: "Al campamento del M19 a caballo",
@@ -1137,7 +1137,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   B07_V2: {
-    src: "/lugares/siloe/video/B07_V2.mp4",
+    src: "/lugares/siloe/video/B07v2.mp4",
     speed: 800,
     type: "scroll",
     title:
@@ -1185,7 +1185,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   B07_V3: {
-    src: "/lugares/siloe/video/B07_V3.mp4",
+    src: "/lugares/siloe/video/B07v3.mp4",
     speed: 800,
     type: "scroll",
     title: "Terminamos la ruta con los arrieros y bajamos por el teleférico",

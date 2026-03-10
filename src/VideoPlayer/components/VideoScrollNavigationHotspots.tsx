@@ -1,5 +1,5 @@
 import { Box, Dialog, Typography, Zoom, Stack } from "@mui/material";
-import { forwardRef } from "react";
+import { forwardRef, useEffect } from "react";
 import type { ElementType, ForwardedRef, ReactElement } from "react";
 import type { TransitionProps } from "@mui/material/transitions";
 import DirectionButton from "./DirectionButton";
@@ -11,16 +11,24 @@ import DirectionalMenu from "./DirectionalMenu";
 export default function VideoScrollNavigationHotspots({
   item,
   direction,
+  setScrollyPosition,
   endContentTitle,
   endContentTop,
   endContentBottom,
 }: VideoScrollNavigationHotspotsProps) {
+  console.log("🚀 ~ VideoScrollNavigationHotspots ~ direction:", direction);
   const navPills = item.links?.map((link) => ({
     [link.direction]: {
       label: link.title,
       link: link.href,
     },
   }));
+
+  useEffect(() => {
+    if (direction === "down") {
+      setScrollyPosition(0.98);
+    }
+  }, [direction]);
 
   const Container: ElementType = item.isBlocking ? Dialog : Zoom;
   const containerProps = item.isBlocking
@@ -72,11 +80,11 @@ export default function VideoScrollNavigationHotspots({
           >
             {/* CONTENIDO ADICIONAL al final del scroll (AKA Paradas) */}
             {/* Necesita mas trabajo : se esta renderizando para cualquier hotspot, deberia solo renderizarse al final */}
-            {/* {endContentTop && <VideoScrollContents content={endContentTop} />}
-            {navButtons}
+            {endContentTop && <VideoScrollContents content={endContentTop} />}
+            {/* {navButtons} */}
             {endContentBottom && (
               <VideoScrollContents content={endContentBottom} />
-            )} */}
+            )}
           </Box>
         </Stack>
       </Container>

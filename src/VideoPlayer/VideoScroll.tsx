@@ -63,6 +63,33 @@ export default function VideoScroll({
     };
   }, [src]);
 
+  // // Extra safety:
+  // useEffect(() => {
+  //   if (!loading) return;
+
+  //   const start = performance.now();
+  //   const interval = window.setInterval(() => {
+  //     const video = containerRef.current?.querySelector("video");
+  //     console.log("🚀 ~ VideoScroll ~ video:", video.readyState);
+  //     if (!video) return;
+
+  //     // 2 = HAVE_CURRENT_DATA, 3/4 are even better
+  //     if (video.readyState >= 2) {
+  //       setLoading(false);
+  //       window.clearInterval(interval);
+  //       return;
+  //     }
+
+  //     if (performance.now() - start > 100_000) {
+  //       // Fallback: stop spinner even if lib never called onReady
+  //       setLoading(false);
+  //       window.clearInterval(interval);
+  //     }
+  //   }, 200);
+
+  //   return () => window.clearInterval(interval);
+  // }, [loading]);
+
   useEffect(() => {
     if (loading || !nextSrc) return;
     if (preloadedForSceneRef.current === src) return;
@@ -119,6 +146,7 @@ export default function VideoScroll({
           key={hotspot.id}
           item={hotspot}
           direction={direction}
+          setScrollyPosition={setScrollyPosition}
           endContentTitle={isEndHotspot && endContentTitle}
           endContentTop={isEndHotspot && endContentTop}
           endContentBottom={isEndHotspot && endContentBottom}
