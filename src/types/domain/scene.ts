@@ -18,8 +18,8 @@ export interface ScrollScene extends BaseScene {
   speed: number;
   navigationHotspots: Hotspot[];
   endContentTitle?: string;
-  endContentTop?: EndContent;
-  endContentBottom?: EndContent;
+  endContent_A?: EndContent;
+  endContent_B?: EndContent;
   audioBackground?: AudioBackground;
 }
 

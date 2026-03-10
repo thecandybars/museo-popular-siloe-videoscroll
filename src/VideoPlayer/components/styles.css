@@ -1,7 +1,32 @@
 .photoGallery {
   object-position: center;
   object-fit: cover;
-  width: 400px;
-  height: 300px;
+  /* width: 400px;
+  height: 200px; */
   border: none;
 }
+/* .image-gallery-left-nav,
+.image-gallery-right-nav {
+} */
+
+.image-gallery-right-nav {
+  transform: scale(0.5, 0.5) translate(150px, -100%);
+}
+.image-gallery-left-nav {
+  transform: scale(0.5, 0.5) translate(-150px, -100%);
+}
+
+/* Styles applied specifically when the gallery is in fullscreen mode */
+/* .fullscreen .image-gallery {
+  width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+}
+.fullscreen .image-gallery-content {
+  height: 100vh;
+}
+.fullscreen .image-gallery-image {
+  max-height: 100vh;
+  height: 100%;
+  object-fit: contain;
+} */

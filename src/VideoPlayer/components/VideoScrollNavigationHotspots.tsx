@@ -6,6 +6,7 @@ import DirectionButton from "./DirectionButton";
 import type { VideoScrollNavigationHotspotsProps } from "../../types";
 import VideoScrollContents from "./VideoScrollContents";
 import DirectionalMenu from "./DirectionalMenu";
+import { Location } from "../../assets/icons";
 // import VideoScrollContents from "./VideoScrollContents";
 
 export default function VideoScrollNavigationHotspots({
@@ -13,8 +14,8 @@ export default function VideoScrollNavigationHotspots({
   direction,
   setScrollyPosition,
   endContentTitle,
-  endContentTop,
-  endContentBottom,
+  endContent_A,
+  endContent_B,
 }: VideoScrollNavigationHotspotsProps) {
   console.log("🚀 ~ VideoScrollNavigationHotspots ~ direction:", direction);
   const navPills = item.links?.map((link) => ({
@@ -52,16 +53,45 @@ export default function VideoScrollNavigationHotspots({
 
   return (
     <Box key={item.id} display="flex" justifyContent="center" width="100%">
-      <Container {...containerProps}>
+      <Dialog
+        open={true}
+        slots={{ transition: Transition }}
+        fullWidth={true}
+        fullScreen={true}
+        maxWidth="xl"
+        sx={{
+          "& .MuiDialog-paper": {
+            backgroundColor: "#00000080",
+            backdropFilter: "blur(16px)",
+            WebkitBackdropFilter: "blur(16px)",
+          },
+        }}
+      >
         <Stack
-          justifyContent={"center"}
+          justifyContent={"space-between"}
           alignItems={"center"}
           sx={{
+            p: 1,
+            fontFamily: "Roboto",
             width: "100%",
             height: "100vh",
           }}
-          gap={2}
+          gap={3}
         >
+          <Typography
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: 1,
+              color: "white",
+              fontFamily: "Roboto",
+              textAlign: "left",
+              alignSelf: "flex-start",
+            }}
+          >
+            <Location />
+            {endContentTitle}
+          </Typography>
           <DirectionalMenu
             centerLabel="¿HACIA DONDE QUIERES IR?"
             {...navPills[0]}
@@ -69,25 +99,38 @@ export default function VideoScrollNavigationHotspots({
             {...navPills[2]}
             {...navPills[3]}
           />
-          {/* <Typography variant="h2" align="center" color={"primary"}>
-            {endContentTitle}
-          </Typography> */}
-          <Box
-            display={"flex"}
+          {/* CONTENIDO ADICIONAL al final del scroll (AKA Paradas) */}
+          <Stack
             justifyContent={"center"}
             alignItems={"center"}
             gap={1}
+            sx={{
+              width: "100%",
+              bgcolor: "#000000aa",
+              p: 1,
+            }}
           >
-            {/* CONTENIDO ADICIONAL al final del scroll (AKA Paradas) */}
-            {/* Necesita mas trabajo : se esta renderizando para cualquier hotspot, deberia solo renderizarse al final */}
-            {endContentTop && <VideoScrollContents content={endContentTop} />}
-            {/* {navButtons} */}
-            {endContentBottom && (
-              <VideoScrollContents content={endContentBottom} />
-            )}
-          </Box>
+            <Typography
+              sx={{
+                alignSelf: "flex-start",
+                color: "#ffffffdd",
+                fontFamily: "Nunito",
+                fontSize: "16px",
+              }}
+            >
+              Contenido relacionado
+            </Typography>
+            <Stack
+              direction="row"
+              justifyContent="space-between"
+              sx={{ width: "100%" }}
+            >
+              {endContent_A && <VideoScrollContents content={endContent_A} />}
+              {endContent_B && <VideoScrollContents content={endContent_B} />}
+            </Stack>
+          </Stack>
         </Stack>
-      </Container>
+      </Dialog>
     </Box>
   );
 }

@@ -20,8 +20,8 @@ export interface VideoScrollNavigationHotspotsProps {
   item: Hotspot;
   direction: WheelDirection;
   endContentTitle?: string | false;
-  endContentTop?: EndContent | false;
-  endContentBottom?: EndContent | false;
+  endContent_A?: EndContent | false;
+  endContent_B?: EndContent | false;
   setScrollyPosition: (position: number) => void;
 }
 

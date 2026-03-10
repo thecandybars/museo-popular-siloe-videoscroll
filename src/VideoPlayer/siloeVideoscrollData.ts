@@ -1,4 +1,4 @@
-// endContentTop y endContentBottom permiten agregar contenido al final del videoScroll.
+// endContent_A y endContent_B permiten agregar contenido al final del videoScroll.
 // Puede ser un video o una foto.
 // type:video recibe un src de video y lo muestra
 // type:photo recibe un src de una array que contenga fotos en formato jpg o png y las muestra en un carrusel
@@ -12,12 +12,12 @@ export const siloeVideoscrollData: SceneRecord = {
     speed: 800,
     type: "scroll",
     endContentTitle: "Monumento de los Diablitos de Siloé",
-    endContentTop: {
+    endContent_A: {
       type: "video",
       src: "/lugares/siloe/video/paradas/paradaA01.mp4",
       title: "Mapi sobre la escuela y el patrimonio cultural de los diablitos",
     },
-    endContentBottom: {
+    endContent_B: {
       title: "¡Viva el carnaval de los diablitos en Siloé!",
       type: "photo",
       src: "/lugares/siloe/fotos/paradaA01",
@@ -64,7 +64,7 @@ export const siloeVideoscrollData: SceneRecord = {
     title: "Caminamos al cementerio San José",
     speed: 800,
     type: "scroll",
-    // endContentTop: {
+    // endContent_A: {
     //   type: "video",
     //   src: "/lugares/siloe/video/paradas/paradaA02.mp4",
     // },
@@ -100,12 +100,12 @@ export const siloeVideoscrollData: SceneRecord = {
     type: "scroll",
     endContentTitle:
       "En memoria de Angelvis Gregorio Bello Pérez, venezolano que asesinaron en el estallido social 2021",
-    endContentTop: {
+    endContent_A: {
       type: "video",
       src: "/lugares/siloe/video/paradas/paradaA03.mp4",
       title: "Andrés recuerda a su compañero durante el estallido social",
     },
-    endContentBottom: {
+    endContent_B: {
       title: "Una comunidad lucha contra el olvido",
       type: "photo",
       src: "/lugares/siloe/fotos/paradaA03",
@@ -153,13 +153,13 @@ export const siloeVideoscrollData: SceneRecord = {
     type: "scroll",
     endContentTitle:
       "Mural de memoria para las víctimas del estallido social 2021",
-    endContentTop: {
+    endContent_A: {
       type: "video",
       src: "/lugares/siloe/video/paradas/paradaA04.mp4",
       title:
         "David sobre la iniciativa contra el olvido de las víctimas del estallido social 2021",
     },
-    endContentBottom: {
+    endContent_B: {
       type: "photo",
       src: "/lugares/siloe/fotos/paradaA04",
       title: "La Dignidad hace Memoria",
@@ -207,13 +207,13 @@ export const siloeVideoscrollData: SceneRecord = {
     speed: 800,
     type: "scroll",
     endContentTitle: "Doña Blanca esperando justicia y verdad",
-    endContentTop: {
+    endContent_A: {
       type: "video",
       src: "/lugares/siloe/video/paradas/paradaA05.mp4",
       title:
         "Doña Blanca sobre la pérdida de su hijo y su resistencia con otros familiares",
     },
-    endContentBottom: {
+    endContent_B: {
       title: "La lucha de doña Blanca y su familia en imágenes",
       type: "photo",
       src: "/lugares/siloe/fotos/paradaA05",
@@ -265,12 +265,12 @@ export const siloeVideoscrollData: SceneRecord = {
     speed: 800,
     type: "scroll",
     endContentTitle: "Jenny sigue resisitiendo y espera justicia",
-    endContentTop: {
+    endContent_A: {
       type: "video",
       src: "/lugares/siloe/video/paradas/paradaA07.mp4",
       title: "Jenny sobre el asesinato de su hijo",
     },
-    endContentBottom: {
+    endContent_B: {
       title:
         "Jenny en las actividades después de la masacre del 3 de mayo de 2021",
       type: "photo",
@@ -321,12 +321,12 @@ export const siloeVideoscrollData: SceneRecord = {
     speed: 800,
     type: "scroll",
     endContentTitle: "La vendedora doña Miriam resiste en la galería de Siloé",
-    endContentTop: {
+    endContent_A: {
       type: "video",
       src: "/lugares/siloe/video/paradas/paradaA08.mp4",
       title: "La hierbatera doña Miriam sobre su legado",
     },
-    endContentBottom: {
+    endContent_B: {
       title: "Un patrimonio arquitectónico en imágenes",
       type: "photo",
       src: "/lugares/siloe/fotos/paradaA08",
@@ -375,13 +375,13 @@ export const siloeVideoscrollData: SceneRecord = {
     type: "scroll",
     endContentTitle:
       "La historia del estallido social y el Tribunal Popular en Siloé",
-    endContentTop: {
+    endContent_A: {
       type: "video",
       src: "/lugares/siloe/video/paradas/paradaA09.mp4",
       title:
         "Ani y Steven sobre el paro nacional y la lucha por los derechos humanos en Siloé",
     },
-    endContentBottom: {
+    endContent_B: {
       title: "El Tribunal Popular en Siloé - una comunidad se organiza",
       type: "photo",
       src: "/lugares/siloe/fotos/paradaA09",
@@ -430,13 +430,13 @@ export const siloeVideoscrollData: SceneRecord = {
     speed: 800,
     type: "scroll",
     endContentTitle: "¡Prohibido olvidar esta tragedia!",
-    endContentTop: {
+    endContent_A: {
       type: "video",
       src: "/lugares/siloe/video/paradas/paradaA10.mp4",
       title:
         "David sobre los muertos quemados en el Dollar City durante el estallido social",
     },
-    endContentBottom: {
+    endContent_B: {
       type: "photo",
       title: "Soñando con un centro cultural y de memoria",
       src: "/lugares/siloe/fotos/paradaA10",
@@ -485,13 +485,13 @@ export const siloeVideoscrollData: SceneRecord = {
     type: "scroll",
     endContentTitle:
       "Un parque que reconstruye la comunidad en alianza con el empresariado",
-    endContentTop: {
+    endContent_A: {
       type: "video",
       src: "/lugares/siloe/video/paradas/paradaA11.mp4",
       title:
         "Héctor Fabio sobre el éxito de un parque para formación, cultura y recreación",
     },
-    endContentBottom: {
+    endContent_B: {
       title: "La historia del parque",
       type: "photo",
       src: "/lugares/siloe/fotos/paradaA11",
@@ -541,12 +541,12 @@ export const siloeVideoscrollData: SceneRecord = {
     speed: 800,
     type: "scroll",
     endContentTitle: "Las minas de carbón en Siloé",
-    endContentTop: {
+    endContent_A: {
       type: "video",
       src: "/lugares/siloe/video/paradas/paradaB01b.mp4",
       title: "David sobre los mineros de Marmato, Caldas",
     },
-    endContentBottom: {
+    endContent_B: {
       title: "Video antiguo de Minas de Siloé años 1960",
       type: "video",
       src: "/lugares/siloe/video/paradas/paradaB01a.mp4",
@@ -586,12 +586,12 @@ export const siloeVideoscrollData: SceneRecord = {
     speed: 800,
     type: "scroll",
     endContentTitle: "El mural sobre una tragedia familiar",
-    endContentTop: {
+    endContent_A: {
       type: "video",
       src: "/lugares/siloe/video/paradas/paradaB02.mp4",
       title: "David sobre el derrumbe de 1997",
     },
-    endContentBottom: {
+    endContent_B: {
       title: "El mural en memoria de las víctimas de la tragedia",
       type: "photo",
       src: "/lugares/siloe/fotos/paradaB02",
@@ -633,12 +633,12 @@ export const siloeVideoscrollData: SceneRecord = {
     speed: 800,
     type: "scroll",
     endContentTitle: "El mirador, la construcción de un sueño",
-    endContentTop: {
+    endContent_A: {
       type: "video",
       src: "/lugares/siloe/video/paradas/paradaB03.mp4",
       title: "Doña Ana sobre la historia de este espacio emblemático",
     },
-    endContentBottom: {
+    endContent_B: {
       title: "La construcción del mirador",
       type: "photo",
       src: "/lugares/siloe/fotos/paradaB03",
@@ -695,12 +695,12 @@ export const siloeVideoscrollData: SceneRecord = {
     type: "scroll",
     title: "Subimos a la estación del cable y terminamos la ruta",
     endContentTitle: "La historia del teleférico",
-    endContentTop: {
+    endContent_A: {
       type: "video",
       src: "/lugares/siloe/video/paradas/paradaC01.mp4",
       title: "David sobre el sueño de un teleférico en Siloé",
     },
-    endContentBottom: {
+    endContent_B: {
       title: "Así se construyó el cable que se inauguró en 2015",
       type: "photo",
       src: "/lugares/siloe/fotos/paradaC01",
@@ -752,12 +752,12 @@ export const siloeVideoscrollData: SceneRecord = {
     type: "scroll",
     title: "Seguimos caminando por las escaleras hacia la estrella",
     endContentTitle: "El muralismos y el grafiti como estética popular",
-    // endContentTop: {
+    // endContent_A: {
     //   type: "video",
     //   src: "/lugares/siloe/video/paradas/paradaB04_V2-3.mp4",
     //   title: "A Siloé no es como lo pintan, sino como lo pintamos",
     // },
-    endContentBottom: {
+    endContent_B: {
       type: "photo",
       src: "/lugares/siloe/fotos/paradaB04_V2-3",
       images: [
@@ -826,12 +826,12 @@ export const siloeVideoscrollData: SceneRecord = {
     type: "scroll",
     title: "Acompañamos a los arrieros hacia la estrella",
     endContentTitle: "El muralismos y el grafiti como estética popular",
-    // endContentTop: {
+    // endContent_A: {
     //   type: "video",
     //   src: "/lugares/siloe/video/paradas/paradaB04_V2-3.mp4",
     //   title: "A Siloé no es como lo pintan, sino como lo pintamos",
     // },
-    endContentBottom: {
+    endContent_B: {
       type: "photo",
       src: "/lugares/siloe/fotos/paradaB04_V2-3",
       images: [
@@ -913,12 +913,12 @@ export const siloeVideoscrollData: SceneRecord = {
     type: "scroll",
     title: "Hacia La Estrella por las escaleras",
     endContentTitle: "La Estrella que corona al pesebre de la montaña mágica",
-    endContentTop: {
+    endContent_A: {
       title: "David sobre unos de los miradores más espectaculares de Cali",
       type: "video",
       src: "/lugares/siloe/video/paradas/paradaB05.mp4",
     },
-    endContentBottom: {
+    endContent_B: {
       title: "Fotografías aéreas de la Estrella",
       type: "photo",
       src: "/lugares/siloe/fotos/paradaB05",
@@ -971,12 +971,12 @@ export const siloeVideoscrollData: SceneRecord = {
     type: "scroll",
     title: "Hacia La Estrella con los arrieros",
     endContentTitle: "La Estrella que corona al pesebre de la montaña mágica",
-    endContentTop: {
+    endContent_A: {
       title: "David sobre unos de los miradores más espectaculares de Cali",
       type: "video",
       src: "/lugares/siloe/video/paradas/paradaB05.mp4",
     },
-    endContentBottom: {
+    endContent_B: {
       title: "Fotografías aéreas de la Estrella",
       type: "photo",
       src: "/lugares/siloe/fotos/paradaB05",
@@ -1028,13 +1028,13 @@ export const siloeVideoscrollData: SceneRecord = {
     type: "scroll",
     title: "Al campamento del M19",
     endContentTitle: "El M-19 en el territorio",
-    endContentTop: {
+    endContent_A: {
       title:
         "Sobre la importancia del campamento del M-19 para sus operaciones a nivel nacional",
       type: "video",
       src: "/lugares/siloe/video/paradas/paradaB06.mp4",
     },
-    endContentBottom: {
+    endContent_B: {
       title: "La loma se movio con el Eme",
       type: "photo",
       src: "/lugares/siloe/fotos/paradaB06",
@@ -1085,13 +1085,13 @@ export const siloeVideoscrollData: SceneRecord = {
     type: "scroll",
     title: "Al campamento del M19 a caballo",
     endContentTitle: "El M-19 en el territorio",
-    endContentTop: {
+    endContent_A: {
       title:
         "David sobre la importancia del campamento del M-19 para sus operaciones a nivel nacional",
       type: "video",
       src: "/lugares/siloe/video/paradas/paradaB06.mp4",
     },
-    endContentBottom: {
+    endContent_B: {
       title: "La loma se movio con el Eme",
       type: "photo",
       src: "/lugares/siloe/fotos/paradaB06",
@@ -1143,13 +1143,13 @@ export const siloeVideoscrollData: SceneRecord = {
     title:
       "Con los más berracos seguimos patoneando hacia el Monumento a la Opresión",
     endContentTitle: "El Monumento en contra de la opresión",
-    endContentTop: {
+    endContent_A: {
       title:
         "David sobre la obra de los maestros Arturo Alape y Alfredo Castañeda",
       type: "video",
       src: "/lugares/siloe/video/paradas/paradaB07.mp4",
     },
-    endContentBottom: {
+    endContent_B: {
       title: "Miradas al Monumento a la Opresión",
       type: "photo",
       src: "/lugares/siloe/fotos/paradaB07",
@@ -1190,12 +1190,12 @@ export const siloeVideoscrollData: SceneRecord = {
     type: "scroll",
     title: "Terminamos la ruta con los arrieros y bajamos por el teleférico",
     endContentTitle: "La cultura del arriero",
-    endContentTop: {
+    endContent_A: {
       title: "'El Cuco', otra generación de arrieros en Siloé",
       type: "video",
       src: "/lugares/siloe/video/paradas/paradaB07_V3.mp4",
     },
-    endContentBottom: {
+    endContent_B: {
       title: "La loma está hecha a lomo de caballo",
       type: "photo",
       src: "/lugares/siloe/fotos/paradaB07_V3",
@@ -1248,12 +1248,12 @@ export const siloeVideoscrollData: SceneRecord = {
     title: "Casa de Jaqueline Rentería",
     endContentTitle:
       "La casa de la doble medallista olímpica Jackeline Rentería",
-    endContentTop: {
+    endContent_A: {
       title: "David sobre el ícono deportivo de la comunidad",
       type: "video",
       src: "/lugares/siloe/video/paradas/paradaB08.mp4",
     },
-    endContentBottom: {
+    endContent_B: {
       title: "Un monumento para la medallista en la glorieta de Siloé",
       type: "photo",
       src: "/lugares/siloe/fotos/paradaB08",
@@ -1307,12 +1307,12 @@ export const siloeVideoscrollData: SceneRecord = {
     type: "scroll",
     title: "La Cascada",
     endContentTitle: "El nombre Siloé proviene de esta cascada",
-    endContentTop: {
+    endContent_A: {
       title: "La hermosa cascada en el sector de la Playa",
       type: "video",
       src: "/lugares/siloe/video/paradas/paradaB10a.mp4",
     },
-    endContentBottom: {
+    endContent_B: {
       title:
         "Jhony sobre sus recuerdos de bañarse y pescar en las fuentes hídricas en Siloé",
       type: "video",
@@ -1349,13 +1349,13 @@ export const siloeVideoscrollData: SceneRecord = {
     type: "scroll",
     title: "Balcon hacia Brisas de Mayo",
     endContentTitle: "La última toma de tierra que resultó en un nuevo barrio",
-    endContentTop: {
+    endContent_A: {
       title:
         "David sobre el origen del barrio Brisas de Mayo y la finca 'Siloé' de los alemanes",
       type: "video",
       src: "/lugares/siloe/video/paradas/paradaB11.mp4",
     },
-    endContentBottom: {
+    endContent_B: {
       title: "La toma de tierra del 3 de mayo del 1981 con apoyo del M-19",
       type: "photo",
       src: "/lugares/siloe/fotos/paradaB11",
@@ -1402,12 +1402,12 @@ export const siloeVideoscrollData: SceneRecord = {
     type: "scroll",
     title: "Estación de Mio Cable",
     endContentTitle: "La historia del teleférico",
-    endContentTop: {
+    endContent_A: {
       title: "David sobre el sueño de un teleférico en Siloé",
       type: "video",
       src: "/lugares/siloe/video/paradas/paradaC01.mp4",
     },
-    endContentBottom: {
+    endContent_B: {
       title: "Así se construyó el cable que se inauguró en 2015",
       type: "photo",
       src: "/lugares/siloe/fotos/paradaC01",

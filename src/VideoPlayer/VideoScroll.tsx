@@ -19,8 +19,8 @@ export default function VideoScroll({
   map,
   audioBackground,
   endContentTitle,
-  endContentTop,
-  endContentBottom,
+  endContent_A,
+  endContent_B,
 }: VideoScrollProps) {
   const [loading, setLoading] = useState(true);
   const [scrollyPosition, setScrollyPosition] = useState(0);
@@ -148,8 +148,8 @@ export default function VideoScroll({
           direction={direction}
           setScrollyPosition={setScrollyPosition}
           endContentTitle={isEndHotspot && endContentTitle}
-          endContentTop={isEndHotspot && endContentTop}
-          endContentBottom={isEndHotspot && endContentBottom}
+          endContent_A={isEndHotspot && endContent_A}
+          endContent_B={isEndHotspot && endContent_B}
         />
       );
     });

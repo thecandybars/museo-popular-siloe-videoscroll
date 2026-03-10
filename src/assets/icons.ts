@@ -15,6 +15,6 @@ export { default as DirectionUp } from "@mui/icons-material/KeyboardDoubleArrowU
 export { default as DirectionDown } from "@mui/icons-material/KeyboardDoubleArrowDown";
 export { default as DirectionLeft } from "@mui/icons-material/KeyboardDoubleArrowLeft";
 export { default as DirectionRight } from "@mui/icons-material/KeyboardDoubleArrowRight";
-export { default as Location } from "@mui/icons-material/MyLocation";
+export { default as Location } from "@mui/icons-material/LocationPin";
 // CUSTOM ICONS
 // export { default as MarkerMuseoMemoria } from "./customIcons/MarkerMuseoMemoria.jsx";
