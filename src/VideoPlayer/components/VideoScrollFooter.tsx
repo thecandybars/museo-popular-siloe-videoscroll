@@ -66,7 +66,7 @@ export default function VideoScrollFooter({
       alignItems={"end"}
       sx={{ position: "fixed", bottom: 0, left: 0, p: 3 }}
     >
-      {/* <VideoScrollMap map={map} progress={progress} /> */}
+      <VideoScrollMap map={map} progress={progress} />
       <Stack
         direction="row"
         alignItems="center"

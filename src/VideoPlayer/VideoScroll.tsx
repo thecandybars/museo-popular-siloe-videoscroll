@@ -153,6 +153,9 @@ export default function VideoScroll({
         />
       );
     });
+  const srcPrefix = src.startsWith("/")
+    ? ""
+    : "https://chocolate-lazy-marsupial-15.mypinata.cloud/ipfs/";
   return (
     <div
       ref={containerRef}
@@ -169,7 +172,7 @@ export default function VideoScroll({
       {src && (
         <ScrollyVideo
           key={src}
-          src={src}
+          src={srcPrefix + src}
           onChange={(currentTime: number) => {
             latestScrollyPositionRef.current = currentTime;
             const now = performance.now();

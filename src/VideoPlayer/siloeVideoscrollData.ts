@@ -7,7 +7,7 @@ import type { SceneRecord } from "../types";
 
 export const siloeVideoscrollData: SceneRecord = {
   A01: {
-    src: "/lugares/siloe/video/A01.mp4",
+    src: "bafybeiaabw7l5j5rltc4ehxnnus5thb7vvzyrawnvlc4a5zs5h2hshnrf4",
     title: "Patoneando la memoria desde el Museo Popular de Siloé",
     speed: 800,
     type: "scroll",
@@ -60,7 +60,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   A02: {
-    src: "/lugares/siloe/video/A02.mp4",
+    src: "bafybeihumncuxch6sildfbto42jneu74g34fo3cvdr4vxo2exz3ppwiq2u",
     title: "Caminamos al cementerio San José",
     speed: 800,
     type: "scroll",
@@ -94,7 +94,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   A03: {
-    src: "/lugares/siloe/video/A03.mp4",
+    src: "bafybeiflk3adklzcjimr3crxby4gr2sbsyueni7lyt3phh4uri7bgm3jpq",
     title: "Andrés y el estallido social de 2021",
     speed: 800,
     type: "scroll",
@@ -147,7 +147,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   A04: {
-    src: "/lugares/siloe/video/A04.mp4",
+    src: "bafybeia5f5aiqo2kppln3csun7ucn6ui2mjkftaqna3eysis65nu7zzqwy",
     title: "Pasamos por el mural de memoria del cementerio",
     speed: 800,
     type: "scroll",
@@ -202,7 +202,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   A05: {
-    src: "/lugares/siloe/video/A05.mp4",
+    src: "bafybeigeqimgbvqisbn7pwwu6bmamgt65yyqoyg77evvfi477tf7gpbw2y",
     title: "Pasamos por la calle comercial de Siloé",
     speed: 800,
     type: "scroll",
@@ -260,7 +260,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   A07: {
-    src: "/lugares/siloe/video/A07.mp4",
+    src: "bafybeihs3qkhgolmounf7cz7lffmswaxophansyj2v5fqdkzkq532azopi",
     title: "Seguimos hacia la galería de Siloé",
     speed: 800,
     type: "scroll",
@@ -316,7 +316,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   A08: {
-    src: "/lugares/siloe/video/A08.mp4",
+    src: "bafybeihyx4kglxmofz3cswjw6guyn2g5y5eopjktpmts3o3jmsfx5vqji4",
     title: "Entramos a la galería",
     speed: 800,
     type: "scroll",
@@ -369,7 +369,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   A09: {
-    src: "/lugares/siloe/video/A09.mp4",
+    src: "bafybeiaoctxthhsoplrfsqxf4ddts2gay2yafhhfuzwyqk75ooulnrs6g4",
     title: "Seguimos a la glorieta de Siloé",
     speed: 800,
     type: "scroll",
@@ -425,7 +425,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   A10: {
-    src: "/lugares/siloe/video/A10.mp4",
+    src: "bafybeib5vbdlnhhwqddxecdjbvo2zqdasulagbxedyc7alg3agd7fd7qre",
     title: "Concemos el antiguo centro comercial quemado el 28 de mayo de 2021",
     speed: 800,
     type: "scroll",
@@ -479,7 +479,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   A11: {
-    src: "/lugares/siloe/video/A11.mp4",
+    src: "bafybeibvoarfdvluilugwedganjzxfnef4ihhvn7l6uobej5ojzn5uoqt4",
     title: "Seguimos al Parque de la Horqueta",
     speed: 800,
     type: "scroll",
@@ -536,7 +536,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   B01: {
-    src: "/lugares/siloe/video/B01.mp4",
+    src: "bafybeihh63qrl753zhrn3neuicjbdwjzg7l3txne3lkpftte3jb56zptra",
     title: "Subimos a la loma de Siloé",
     speed: 800,
     type: "scroll",
@@ -581,7 +581,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   B02: {
-    src: "/lugares/siloe/video/B02.mp4",
+    src: "bafybeifuw5i2ks6hvkz4ave6hr2mkfah3hamwgyebpfsovrtlp5xhvlkhm",
     title: "Hacia el mirador 'Yo amo a Siloé, y usted?'",
     speed: 800,
     type: "scroll",
@@ -628,7 +628,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   B03: {
-    src: "/lugares/siloe/video/B03.mp4",
+    src: "bafybeidwoqizedu6lkipiwmtl5ydm27x3h4wk6v3jo2lqgtojeyo3eensq",
     title: "Conocemos la historiadora doña Ana",
     speed: 800,
     type: "scroll",
@@ -690,7 +690,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   B04_V1: {
-    src: "/lugares/siloe/video/B04v1.mp4",
+    src: "bafybeic5smku4qna6cc2mclld3zizx2ghscdhbqbbpbnhbox2gegibuvr4",
     speed: 800,
     type: "scroll",
     title: "Subimos a la estación del cable y terminamos la ruta",
@@ -747,7 +747,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   B04_V2: {
-    src: "/lugares/siloe/video/B04v2.mp4",
+    src: "bafybeigsaofkfhgiir6vsxw3fot3uplzqrzedgx5sngtcbbhguno2hgobe",
     speed: 800,
     type: "scroll",
     title: "Seguimos caminando por las escaleras hacia la estrella",
@@ -821,7 +821,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   B04_V3: {
-    src: "/lugares/siloe/video/B04v3.mp4",
+    src: "bafybeialn6x6s6nzro474s7il4h5jtdkpddn2w52t2j77nsckoahfjiuxe",
     speed: 800,
     type: "scroll",
     title: "Acompañamos a los arrieros hacia la estrella",
@@ -908,7 +908,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   B05_V2: {
-    src: "/lugares/siloe/video/B05_V2.mp4",
+    src: "bafybeieqkeio7jxcxkooqyunjnvjrm5wwrrgkt7ez5jqqqgcj7wxsp3vha",
     speed: 800,
     type: "scroll",
     title: "Hacia La Estrella por las escaleras",
@@ -966,7 +966,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   B05_V3: {
-    src: "/lugares/siloe/video/B05v3.mp4",
+    src: "bafybeigx4xq4xxwvmahqjimaq3fzkepibi2l7sfc7gp3artjhcb5h4mm6e",
     speed: 800,
     type: "scroll",
     title: "Hacia La Estrella con los arrieros",
@@ -1023,7 +1023,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   B06_V2: {
-    src: "/lugares/siloe/video/B06v2.mp4",
+    src: "bafybeib3pskmuhcrz4f4ti6hal6adn4ixyng7pwsr7hvsaf5vdugqhhani",
     speed: 800,
     type: "scroll",
     title: "Al campamento del M19",
@@ -1080,7 +1080,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   B06_V3: {
-    src: "/lugares/siloe/video/B06v3.mp4",
+    src: "bafybeibx75eo7tbg2ef65wxvottgaiblvptpfeqpyi5yullhtjn2z3eddq",
     speed: 800,
     type: "scroll",
     title: "Al campamento del M19 a caballo",
@@ -1137,7 +1137,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   B07_V2: {
-    src: "/lugares/siloe/video/B07v2.mp4",
+    src: "bafybeihue4dwpccsxxlvabjygtw6k5znwpnj3o2v4pqicykqzvyjowm3gi",
     speed: 800,
     type: "scroll",
     title:
@@ -1185,7 +1185,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   B07_V3: {
-    src: "/lugares/siloe/video/B07v3.mp4",
+    src: "bafybeig7wc4zw2st74cu7mqw77y6mz6qiyorqic5iglzqsbovpgormmhwa",
     speed: 800,
     type: "scroll",
     title: "Terminamos la ruta con los arrieros y bajamos por el teleférico",
@@ -1242,7 +1242,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   B08: {
-    src: "/lugares/siloe/video/B08.mp4",
+    src: "bafybeige6x6x2e2tjj42zjegq2nis6nsyzkobej4on27ryrjvsnpmlliru",
     speed: 2000,
     type: "scroll",
     title: "Casa de Jaqueline Rentería",
@@ -1302,7 +1302,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   B10: {
-    src: "/lugares/siloe/video/B10.mp4",
+    src: "bafybeid3zkfyxwx72fm27eja7shdxx6hckzvwr37kobptgwstx4fr6etsu",
     speed: 800,
     type: "scroll",
     title: "La Cascada",
@@ -1344,7 +1344,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   B11: {
-    src: "/lugares/siloe/video/B11.mp4",
+    src: "bafybeiabgrztkykxmknc6episapwhaa6apzwrzta5i3lpzectjws27shtm",
     speed: 800,
     type: "scroll",
     title: "Balcon hacia Brisas de Mayo",
@@ -1397,7 +1397,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   C01: {
-    src: "/lugares/siloe/video/C01v1.mp4",
+    src: "bafybeiggphtogjathygolf72qlgj7q7btgznwlpbzkczpfwswe4v4wffae",
     speed: 800,
     type: "scroll",
     title: "Estación de Mio Cable",
@@ -1454,10 +1454,9 @@ export const siloeVideoscrollData: SceneRecord = {
       src: "/lugares/siloe/audio/C01.mp3",
     },
   },
-
   C02v1a: {
     // Miocable trayecto completo
-    src: "/lugares/siloe/video/C02v1a.mp4",
+    src: "bafybeibclqxkfd5bn6m2dlveojwrrq3xbfi3ihtfewvwjaft7r3pvc7wim",
     type: "video",
     title: "MioCable",
     startTime: 0,
@@ -1472,7 +1471,20 @@ export const siloeVideoscrollData: SceneRecord = {
   },
   C02v1b: {
     // Miocable trayecto desde la mitad
-    src: "/lugares/siloe/video/C02v1b.mp4",
+    src: "bafybeighgcftwb2boqkiuvbt4hz7rkh56lcbvtnlo7hbqml7vjfigb6e4q",
+    type: "video",
+    title: "MioCable",
+    startTime: 0,
+    map: {
+      points: [
+        [3.4200658882636485, -76.55793973085903],
+        [3.415544908483542, -76.54925502064263],
+      ],
+    },
+  },
+  C02v1c: {
+    // Miocable trayecto desde la ultima
+    src: "bafybeibyb5yrntspiv7wp2kxip6l5uofspi4lu7nhhxxb7rqzdup3ckg6m",
     type: "video",
     title: "MioCable",
     startTime: 0,
@@ -1484,7 +1496,7 @@ export const siloeVideoscrollData: SceneRecord = {
     },
   },
   C02v2: {
-    src: "/lugares/siloe/video/C02v2.mp4",
+    src: "bafybeifmqhs7esvmcdyfeuetawdgwizkykwedj2gpo55fg2zd4isz7sxfa",
     type: "video",
     title: "Dron",
     startTime: 0,
