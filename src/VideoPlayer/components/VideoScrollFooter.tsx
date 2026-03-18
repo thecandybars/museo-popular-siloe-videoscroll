@@ -6,7 +6,7 @@ import { CancelIcon, HelpIcon } from "../../assets/icons";
 import type { VideoScrollFooterProps } from "../../types";
 
 export default function VideoScrollFooter({
-  title,
+  caption,
   map,
   progress,
   audioSrc,
@@ -88,7 +88,7 @@ export default function VideoScrollFooter({
             borderRadius: "99px",
           }}
         >
-          {title}
+          {caption}
         </Typography>
         <Stack
           direction="row"

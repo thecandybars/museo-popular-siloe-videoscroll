@@ -43,7 +43,7 @@ export default function VideoScrollContents({
 
 function PhotoGallery({ src, images }: PhotoContentProps) {
   const styledGalleryItems = images?.map((image: string) => ({
-    original: `${src}/${image}`,
+    original: `${src}${image}`,
     originalClass: "photoGallery",
   })) as {
     original: string;

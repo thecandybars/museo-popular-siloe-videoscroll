@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import VideoPlayerFooter from "./components/VideoPlayerFooter";
 import type { VideoScene } from "../types";
+import { useNavigate } from "react-router-dom";
 
 export default function VideoPlayer({
   src,
@@ -13,6 +14,7 @@ export default function VideoPlayer({
   const [currentTime, setCurrentTime] = useState(0);
   const [controlsVisible, setControlsVisible] = useState(false);
   const [timeoutId, setTimeoutId] = useState(null);
+  const navigate = useNavigate();
 
   // Como la API de <video> no permite saber si los controles son visibles o no, se simula el comportamiento.
   // Todo con el objetivo de mover el footer hacia arriba o abajo dependiendo de si los controles son visibles o no.
@@ -62,9 +64,7 @@ export default function VideoPlayer({
       onMouseLeave={handleMouseLeave}
     >
       <VideoPlayerFooter
-        title={
-          title || src.slice(src.lastIndexOf("/") + 1, src.lastIndexOf("."))
-        }
+        title={title || ""}
         map={map}
         progress={currentTime}
         controlsVisible={controlsVisible}
@@ -72,9 +72,13 @@ export default function VideoPlayer({
       <video
         ref={videoRef}
         controls={controlsVisible}
+        autoPlay
         style={{
           width: "100%",
           height: "100%",
+        }}
+        onEnded={() => {
+          navigate("/");
         }}
       >
         <source src={src} type="video/mp4" />

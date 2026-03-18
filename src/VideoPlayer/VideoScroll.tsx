@@ -5,6 +5,7 @@ import ScrollyVideo from "scrolly-video/dist/ScrollyVideo.esm.jsx";
 import VideoScrollFooter from "./components/VideoScrollFooter";
 import LoadingAnimation from "./components/LoadingAnimation";
 import type { ScrollScene, WheelDirection } from "../types";
+import { Box, Typography } from "@mui/material";
 
 interface VideoScrollProps extends ScrollScene {
   nextSrc?: string;
@@ -15,6 +16,7 @@ export default function VideoScroll({
   nextSrc,
   speed,
   title,
+  caption,
   navigationHotspots = [],
   map,
   audioBackground,
@@ -25,71 +27,161 @@ export default function VideoScroll({
   const [loading, setLoading] = useState(true);
   const [scrollyPosition, setScrollyPosition] = useState(0);
   const [showHotspots, setShowHotspots] = useState(false);
+
   const containerRef = useRef<HTMLDivElement | null>(null);
   const preloaderRef = useRef<HTMLVideoElement | null>(null);
   const preloadedForSceneRef = useRef<string | null>(null);
-  const readyRafRef = useRef<number | null>(null);
   const latestScrollyPositionRef = useRef(0);
   const lastCommitTsRef = useRef(0);
+  const hotspotsShownRef = useRef(false);
+
   const { direction } = useWheelCounter() as {
     frame: number;
     direction: WheelDirection;
   };
 
-  // Cleanup video on unmount
+  /**
+   * Reset scene-related UI state every time the source changes.
+   * Also capture the current host node so cleanup uses a stable reference
+   * and does not trigger the React ref warning.
+   */
   useEffect(() => {
+    const host = containerRef.current;
+
     window.scrollTo(0, 0);
     setLoading(true);
     setScrollyPosition(0);
     setShowHotspots(false);
+
     latestScrollyPositionRef.current = 0;
     lastCommitTsRef.current = 0;
     preloadedForSceneRef.current = null;
-    if (readyRafRef.current !== null) {
-      cancelAnimationFrame(readyRafRef.current);
-      readyRafRef.current = null;
-    }
+    hotspotsShownRef.current = false;
+
     if (preloaderRef.current) {
       preloaderRef.current.pause();
       preloaderRef.current.remove();
       preloaderRef.current = null;
     }
+
     return () => {
       const videoElements: NodeListOf<HTMLVideoElement> | HTMLVideoElement[] =
-        containerRef.current?.querySelectorAll("video") ?? [];
+        host?.querySelectorAll("video") ?? [];
+
       videoElements.forEach((video) => {
         video.pause();
       });
     };
   }, [src]);
 
-  // // Extra safety:
-  // useEffect(() => {
-  //   if (!loading) return;
+  /**
+   * When useWebCodecs={false}, ScrollyVideo's onReady may never fire.
+   * So instead of relying on the library callback, we detect when the
+   * inner <video> element is actually ready enough to display a frame.
+   */
 
-  //   const start = performance.now();
-  //   const interval = window.setInterval(() => {
-  //     const video = containerRef.current?.querySelector("video");
-  //     console.log("🚀 ~ VideoScroll ~ video:", video.readyState);
-  //     if (!video) return;
+  useEffect(() => {
+    if (!loading) return;
 
-  //     // 2 = HAVE_CURRENT_DATA, 3/4 are even better
-  //     if (video.readyState >= 2) {
-  //       setLoading(false);
-  //       window.clearInterval(interval);
-  //       return;
-  //     }
+    const host = containerRef.current;
+    if (!host) return;
 
-  //     if (performance.now() - start > 100_000) {
-  //       // Fallback: stop spinner even if lib never called onReady
-  //       setLoading(false);
-  //       window.clearInterval(interval);
-  //     }
-  //   }, 200);
+    let cleanupVideoListeners: (() => void) | undefined;
+    let intervalId: number | undefined;
+    let cancelled = false;
 
-  //   return () => window.clearInterval(interval);
-  // }, [loading]);
+    const MIN_BUFFERED_SECONDS = 10;
+    const MIN_VISIBLE_LOADING_MS = 3000;
+    const effectStartTs = performance.now();
 
+    const hasEnoughBuffered = (video: HTMLVideoElement) => {
+      const ranges = video.buffered;
+      if (!ranges || ranges.length === 0) return false;
+
+      // Require a buffered range that actually starts near the beginning
+      for (let i = 0; i < ranges.length; i++) {
+        const start = ranges.start(i);
+        const end = ranges.end(i);
+        if (start <= 0.1 && end >= MIN_BUFFERED_SECONDS) {
+          return true;
+        }
+      }
+
+      return false;
+    };
+
+    const maybeMarkReady = (video: HTMLVideoElement) => {
+      if (cancelled) return;
+
+      const enoughData = video.readyState >= 4;
+      const enoughBuffered = hasEnoughBuffered(video);
+      const enoughTimePassed =
+        performance.now() - effectStartTs >= MIN_VISIBLE_LOADING_MS;
+
+      if (enoughData && enoughBuffered && enoughTimePassed) {
+        cleanupVideoListeners?.();
+        setLoading(false);
+      }
+    };
+
+    const bindToVideo = () => {
+      const video = host.querySelector("video");
+      if (!video) return false;
+
+      const tryReady = () => {
+        maybeMarkReady(video);
+      };
+
+      video.addEventListener("loadeddata", tryReady);
+      video.addEventListener("canplay", tryReady);
+      video.addEventListener("progress", tryReady);
+
+      cleanupVideoListeners = () => {
+        video.removeEventListener("loadeddata", tryReady);
+        video.removeEventListener("canplay", tryReady);
+        video.removeEventListener("progress", tryReady);
+      };
+
+      // Check immediately too
+      tryReady();
+
+      return true;
+    };
+
+    const boundNow = bindToVideo();
+
+    if (!boundNow) {
+      intervalId = window.setInterval(() => {
+        const video = host.querySelector("video");
+        if (!video) return;
+
+        const bound = bindToVideo();
+        if (bound && intervalId) {
+          window.clearInterval(intervalId);
+          intervalId = undefined;
+        }
+      }, 100);
+    }
+
+    // Keep checking until minimum wall-clock time has passed,
+    // even if no media events fire after initial buffering.
+    const timerId = window.setInterval(() => {
+      const video = host.querySelector("video");
+      if (video) maybeMarkReady(video);
+    }, 100);
+
+    return () => {
+      cancelled = true;
+      if (intervalId) window.clearInterval(intervalId);
+      window.clearInterval(timerId);
+      cleanupVideoListeners?.();
+    };
+  }, [src, loading]);
+
+  /**
+   * Preload only metadata for the next scene's video.
+   * This is lightweight and helps reduce the delay before the next scene starts.
+   */
   useEffect(() => {
     if (loading || !nextSrc) return;
     if (preloadedForSceneRef.current === src) return;
@@ -97,6 +189,7 @@ export default function VideoScroll({
     const connection = (
       navigator as Navigator & { connection?: { saveData?: boolean } }
     ).connection;
+
     if (connection?.saveData) return;
 
     const host = containerRef.current;
@@ -120,6 +213,7 @@ export default function VideoScroll({
     preloader.addEventListener("loadedmetadata", handleLoadedMetadata, {
       once: true,
     });
+
     host.appendChild(preloader);
     preloader.load();
 
@@ -136,11 +230,11 @@ export default function VideoScroll({
     };
   }, [loading, nextSrc, src]);
 
-  // HOTSPOTS
   const renderNavigationHotspots =
     showHotspots &&
     navigationHotspots.map((hotspot, index, array) => {
       const isEndHotspot = index === array.length - 1;
+
       return (
         <VideoScrollNavigationHotspots
           key={hotspot.id}
@@ -153,9 +247,9 @@ export default function VideoScroll({
         />
       );
     });
-  const srcPrefix = src.startsWith("/")
-    ? ""
-    : "https://chocolate-lazy-marsupial-15.mypinata.cloud/ipfs/";
+
+  const srcPrefix = "";
+
   return (
     <div
       ref={containerRef}
@@ -166,40 +260,56 @@ export default function VideoScroll({
         backgroundColor: "#000",
       }}
     >
-      {/* Loading */}
       <LoadingAnimation open={loading} />
-      {/* Video Content */}
+
       {src && (
         <ScrollyVideo
+          transitionSpeed={4}
           key={src}
           src={srcPrefix + src}
+          useWebCodecs={true}
+          cover={true}
           onChange={(currentTime: number) => {
             latestScrollyPositionRef.current = currentTime;
+
             const now = performance.now();
-            if (now - lastCommitTsRef.current >= 100) {
+            if (now - lastCommitTsRef.current >= 200) {
               lastCommitTsRef.current = now;
               setScrollyPosition(currentTime);
             }
-            if (currentTime >= 0.999) setShowHotspots(true);
+
+            // Show hotspots only once when the scene reaches the end.
+            if (currentTime >= 0.999 && !hotspotsShownRef.current) {
+              hotspotsShownRef.current = true;
+              setShowHotspots(true);
+            }
           }}
-          onReady={() => {
-            readyRafRef.current = requestAnimationFrame(() => {
-              setLoading(false);
-              readyRafRef.current = null;
-            });
-          }}
-          cover={true}
-          preload="metadata"
-          debug={false}
         />
       )}
-      {/* Hotspots */}
+
+      <Box position="fixed" top="24px" left="12px">
+        <Typography
+          variant="h4"
+          color="white"
+          sx={{
+            display: "flex",
+            flex: 0.9,
+            py: 3,
+            px: 3,
+            bgcolor: "#00000080",
+            backdropFilter: "blur(32px)",
+            WebkitBackdropFilter: "blur(32px)",
+            borderRadius: "10px",
+          }}
+        >
+          {title}
+        </Typography>
+      </Box>
+
       {renderNavigationHotspots}
-      {/* Footer */}
+
       <VideoScrollFooter
-        title={
-          title || src.slice(src.lastIndexOf("/") + 1, src.lastIndexOf("."))
-        }
+        caption={caption}
         map={map}
         progress={scrollyPosition}
         audioSrc={audioBackground?.src}

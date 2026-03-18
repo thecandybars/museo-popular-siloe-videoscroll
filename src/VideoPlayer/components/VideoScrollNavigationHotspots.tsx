@@ -17,7 +17,6 @@ export default function VideoScrollNavigationHotspots({
   endContent_A,
   endContent_B,
 }: VideoScrollNavigationHotspotsProps) {
-  console.log("🚀 ~ VideoScrollNavigationHotspots ~ direction:", direction);
   const navPills = item.links?.map((link) => ({
     [link.direction]: {
       label: link.title,
@@ -31,25 +30,25 @@ export default function VideoScrollNavigationHotspots({
     }
   }, [direction]);
 
-  const Container: ElementType = item.isBlocking ? Dialog : Zoom;
-  const containerProps = item.isBlocking
-    ? // Dialog props
-      {
-        open: true,
-        TransitionComponent: Transition,
-        fullWidth: true,
-        maxWidth: "xl" as const,
-        sx: {
-          "& .MuiDialog-paper": {
-            backgroundColor: "transparent",
-          },
-        },
-      }
-    : // Zoom props
-      {
-        in: true,
-        timeout: 1200,
-      };
+  // const Container: ElementType = item.isBlocking ? Dialog : Zoom;
+  // const containerProps = item.isBlocking
+  //   ? // Dialog props
+  //     {
+  //       open: true,
+  //       TransitionComponent: Transition,
+  //       fullWidth: true,
+  //       maxWidth: "xl" as const,
+  //       sx: {
+  //         "& .MuiDialog-paper": {
+  //           backgroundColor: "transparent",
+  //         },
+  //       },
+  //     }
+  //   : // Zoom props
+  //     {
+  //       in: true,
+  //       timeout: 1200,
+  //     };
 
   return (
     <Box key={item.id} display="flex" justifyContent="center" width="100%">
@@ -78,20 +77,22 @@ export default function VideoScrollNavigationHotspots({
           }}
           gap={3}
         >
-          <Typography
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              gap: 1,
-              color: "white",
-              fontFamily: "Roboto",
-              textAlign: "left",
-              alignSelf: "flex-start",
-            }}
-          >
-            <Location />
-            {endContentTitle}
-          </Typography>
+          {endContentTitle && (
+            <Typography
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 1,
+                color: "white",
+                fontFamily: "Roboto",
+                textAlign: "left",
+                alignSelf: "flex-start",
+              }}
+            >
+              <Location />
+              {endContentTitle}
+            </Typography>
+          )}
           <DirectionalMenu
             centerLabel="¿HACIA DONDE QUIERES IR?"
             {...navPills[0]}
@@ -110,16 +111,18 @@ export default function VideoScrollNavigationHotspots({
               p: 1,
             }}
           >
-            <Typography
-              sx={{
-                alignSelf: "flex-start",
-                color: "#ffffffdd",
-                fontFamily: "Nunito",
-                fontSize: "16px",
-              }}
-            >
-              Contenido relacionado
-            </Typography>
+            {(endContent_A || endContent_B) && (
+              <Typography
+                sx={{
+                  alignSelf: "flex-start",
+                  color: "#ffffffdd",
+                  fontFamily: "Nunito",
+                  fontSize: "16px",
+                }}
+              >
+                Contenido relacionado
+              </Typography>
+            )}
             <Stack
               direction="row"
               justifyContent="space-between"

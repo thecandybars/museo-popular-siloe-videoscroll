@@ -10,10 +10,11 @@ interface BaseScene {
   src: string;
   type: SceneType;
   title: string;
-  map: MapRoute;
+  map?: MapRoute;
 }
 
 export interface ScrollScene extends BaseScene {
+  caption: string;
   type: "scroll";
   speed: number;
   navigationHotspots: Hotspot[];

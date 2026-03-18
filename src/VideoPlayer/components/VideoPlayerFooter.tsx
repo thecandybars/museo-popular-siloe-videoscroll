@@ -4,7 +4,7 @@ import type { MapRoute } from "../../types";
 
 interface VideoPlayerFooterProps {
   title: string;
-  map: MapRoute;
+  map?: MapRoute;
   progress: number;
   controlsVisible: boolean;
 }
@@ -28,7 +28,7 @@ export default function VideoPlayerFooter({
         transition: "0.2s",
       }}
     >
-      <VideoScrollMap map={map} progress={progress} />
+      {map && <VideoScrollMap map={map} progress={progress} />}
       <Box
         display="flex"
         alignItems="center"

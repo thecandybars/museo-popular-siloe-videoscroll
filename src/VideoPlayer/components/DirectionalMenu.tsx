@@ -150,7 +150,7 @@ const DirectionPillButton = ({
       },
     }}
     component={Link}
-    to={"/siloe" + direction.link}
+    to={"/ruta-de-la-memoria" + direction.link}
     //   to={sanitizeURL(baseURL, link.href)}
   >
     {/* <ArrowIcon sx={{ ...styles.icon, color: "white" }} /> */}

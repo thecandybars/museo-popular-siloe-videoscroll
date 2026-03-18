@@ -8,6 +8,8 @@ declare module "scrolly-video/dist/ScrollyVideo.esm.jsx" {
     cover?: boolean;
     preload?: string;
     debug?: boolean;
+    useWebCodecs?: boolean;
+    transitionSpeed?: number;
   }
 
   const ScrollyVideo: React.FC<ScrollyVideoProps>;

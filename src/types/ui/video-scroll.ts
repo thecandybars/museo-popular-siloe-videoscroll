@@ -10,7 +10,7 @@ import type {
 export type WheelDirection = "up" | "down" | null;
 
 export interface VideoScrollFooterProps {
-  title: string;
+  caption: string;
   map: MapRoute;
   progress: number;
   audioSrc?: AudioBackground["src"];
