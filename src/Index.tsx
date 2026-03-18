@@ -11,12 +11,16 @@ export default function Index() {
     >
       <Stack gap={2} alignItems="center" width="60%">
         <Typography variant="h1">Museo Popular de Siloé</Typography>
-        <video src="/lugares/siloe/video/intro.mp4" controls width="100%" />
+        <video
+          src="https://chocolate-lazy-marsupial-15.mypinata.cloud/ipfs/QmP3t9vcgNKKMZ5ARy7PSx4wUxAQZhZxXLeCwMj8UrvhvU"
+          controls
+          width="100%"
+        />
         <Box display="flex" gap={2}>
           <Button
             color="secondary"
             component={Link}
-            to="/siloe/A01"
+            to="/museo"
             variant="contained"
           >
             Entrar al Museo
@@ -24,7 +28,7 @@ export default function Index() {
           <Button
             color="secondary"
             component={Link}
-            to="/siloe/A01"
+            to="/ruta-de-la-memoria/A01"
             variant="contained"
           >
             Caminar por Siloé

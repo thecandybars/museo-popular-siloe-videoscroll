@@ -35,7 +35,18 @@ const App = () => {
     createRoutesFromElements(
       <Route>
         <Route path="/" element={<Index />} />
-        {/* Las rutas con VideoScroll o VideoPlayer se crean a partir de siloeVideoscrollData. EJ : /siloe/A01 */}
+        <Route
+          path="/museo"
+          element={
+            <VideoPlayer
+              src="https://chocolate-lazy-marsupial-15.mypinata.cloud/ipfs/QmP3t9vcgNKKMZ5ARy7PSx4wUxAQZhZxXLeCwMj8UrvhvU"
+              title="Museo de Siloé"
+              type="video"
+              startTime={0}
+            />
+          }
+        />
+        {/* Las rutas con VideoScroll o VideoPlayer se crean a partir de siloeVideoscrollData. EJ : /ruta-de-la-memoria/A01 */}
         {sceneEntries.map(([sceneId, scene]) => {
           const type = scene.type;
           if (!type) return null;
@@ -43,7 +54,7 @@ const App = () => {
             return (
               <Route
                 key={sceneId}
-                path={"/siloe/" + sceneId}
+                path={"/ruta-de-la-memoria/" + sceneId}
                 element={<VideoScroll {...scene} nextSrc={getNextSrc(scene)} />}
               />
             );
@@ -51,7 +62,7 @@ const App = () => {
             return (
               <Route
                 key={sceneId}
-                path={"/siloe/" + sceneId}
+                path={"/ruta-de-la-memoria/" + sceneId}
                 element={<VideoPlayer {...scene} />}
               />
             );
