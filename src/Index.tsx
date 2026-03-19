@@ -19,16 +19,25 @@ export default function Index() {
       display="flex"
       justifyContent={"center"}
       alignItems={"center"}
-      height="100vh"
+      height="100%"
     >
-      <Stack gap={2} alignItems="center" width="100%">
-        <Box display="flex" justifyContent={"center"} sx={{ flex: 1 }}>
-          <video
-            src="https://chocolate-lazy-marsupial-15.mypinata.cloud/ipfs/QmP3t9vcgNKKMZ5ARy7PSx4wUxAQZhZxXLeCwMj8UrvhvU"
-            controls
-            width="80%"
-          />
-        </Box>
+      <Stack
+        height="100%"
+        gap={2}
+        justifyContent="center"
+        alignItems="center"
+        width="100%"
+      >
+        <video
+          src="https://chocolate-lazy-marsupial-15.mypinata.cloud/ipfs/QmP3t9vcgNKKMZ5ARy7PSx4wUxAQZhZxXLeCwMj8UrvhvU"
+          controls
+          style={{
+            backgroundColor: "black",
+            width: "85%",
+            height: "85%",
+            paddingTop: "16px",
+          }}
+        />
         <Stack alignItems="center" direction="row" gap={8}>
           <Button
             component={Link}
@@ -39,10 +48,10 @@ export default function Index() {
             Conocer al Museo
           </Button>
           <Button
-            sx={buttonStyle}
             component={Link}
             to="/ruta-de-la-memoria/A01"
             variant="contained"
+            sx={buttonStyle}
           >
             Caminar por Siloé
           </Button>
