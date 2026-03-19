@@ -14,6 +14,7 @@ export interface VideoScrollFooterProps {
   map: MapRoute;
   progress: number;
   audioSrc?: AudioBackground["src"];
+  onFullscreen: () => void;
 }
 
 export interface VideoScrollNavigationHotspotsProps {

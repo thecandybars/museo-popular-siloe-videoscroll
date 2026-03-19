@@ -37,7 +37,7 @@ export default function Index() {
           title="Bienvenidos el Museo Popular de Siloé"
           showButtonHome={false}
           src="https://chocolate-lazy-marsupial-15.mypinata.cloud/ipfs/QmP3t9vcgNKKMZ5ARy7PSx4wUxAQZhZxXLeCwMj8UrvhvU"
-          coverImage="/public/fondo.jpg"
+          coverImage="/fondo.jpg"
         />
         <Stack
           alignItems="center"

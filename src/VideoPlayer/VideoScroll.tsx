@@ -251,7 +251,20 @@ export default function VideoScroll({
       );
     });
 
-  const srcPrefix = "";
+  const toggleFullscreen = async () => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    try {
+      if (!document.fullscreenElement) {
+        await container.requestFullscreen();
+      } else {
+        await document.exitFullscreen();
+      }
+    } catch (error) {
+      console.error("Fullscreen failed:", error);
+    }
+  };
 
   return (
     <div
@@ -269,7 +282,7 @@ export default function VideoScroll({
         <ScrollyVideo
           transitionSpeed={4}
           key={src}
-          src={srcPrefix + src}
+          src={src}
           useWebCodecs={true}
           cover={true}
           onChange={(currentTime: number) => {
@@ -324,6 +337,7 @@ export default function VideoScroll({
         map={map}
         progress={scrollyPosition}
         audioSrc={audioBackground?.src}
+        onFullscreen={toggleFullscreen}
       />
     </div>
   );

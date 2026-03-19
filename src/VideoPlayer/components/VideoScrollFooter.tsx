@@ -1,15 +1,17 @@
-import { Box, Button, Dialog, Stack, Typography } from "@mui/material";
+import { Button, Dialog, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 import VideoScrollMap from "./VideoScrollMap";
 import VideoScrollAudioPlayer from "./VideoScrollAudioPlayer";
-import { CancelIcon, HelpIcon } from "../../assets/icons";
+import { HelpIcon } from "../../assets/icons";
 import type { VideoScrollFooterProps } from "../../types";
+import FullscreenIcon from "@mui/icons-material/Fullscreen";
 
 export default function VideoScrollFooter({
   caption,
   map,
   progress,
   audioSrc,
+  onFullscreen,
 }: VideoScrollFooterProps) {
   // HELP
   const [openHelp, setOpenHelp] = useState(false);
@@ -122,6 +124,21 @@ export default function VideoScrollFooter({
             onClick={() => setOpenHelp((prev) => !prev)}
           >
             <HelpIcon fontSize="small" sx={{ color: "#ffffff80" }} />
+          </Button>
+          <Button
+            sx={{
+              border: "0.5px solid #FCFAF5",
+              bgcolor: "transparent",
+              p: 1,
+              width: 32,
+              height: 32,
+              minWidth: 32,
+              minHeight: 32,
+              borderRadius: "100%",
+            }}
+            onClick={onFullscreen}
+          >
+            <FullscreenIcon fontSize="small" sx={{ color: "#ffffff80" }} />
           </Button>
         </Stack>
       </Stack>
