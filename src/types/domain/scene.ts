@@ -27,6 +27,7 @@ export interface ScrollScene extends BaseScene {
 export interface VideoScene extends BaseScene {
   type: "video";
   startTime: number;
+  showButtonHome?: boolean;
 }
 
 export type Scene = ScrollScene | VideoScene;

@@ -9,11 +9,13 @@ import Forward10Icon from "@mui/icons-material/Forward10";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import VolumeOffIcon from "@mui/icons-material/VolumeOff";
 import FullscreenIcon from "@mui/icons-material/Fullscreen";
+import ButtonHome from "./components/ButtonHome";
 
 export default function VideoPlayer({
   src,
   title,
   startTime = 0,
+  showButtonHome = true,
   // map,
 }: VideoScene) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -253,7 +255,8 @@ export default function VideoPlayer({
             cursor: "pointer",
           }}
         />
-        <Box
+
+        {/* <Box
           sx={{
             position: "absolute",
             top: 0,
@@ -291,7 +294,47 @@ export default function VideoPlayer({
               {title}
             </Typography>
           )}
-        </Box>
+        </Box> */}
+
+        <Stack
+          direction="row"
+          gap={2}
+          // width="600px"
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            px: 2,
+            py: 1.5,
+            opacity: showOverlayUi ? 1 : 0,
+            transition: "opacity 0.25s ease",
+            pointerEvents: "all",
+            cursor: "default",
+            background:
+              "linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.28), rgba(0,0,0,0))",
+          }}
+        >
+          {showButtonHome && <ButtonHome />}
+          <Typography
+            variant="h4"
+            color="white"
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              // flex: 0.9,
+              py: 1,
+              px: 2,
+              bgcolor: "#00000080",
+              backdropFilter: "blur(32px)",
+              WebkitBackdropFilter: "blur(32px)",
+              borderRadius: "10px",
+            }}
+          >
+            {title}
+          </Typography>
+        </Stack>
+
         {!hasStarted && (
           <Box
             sx={{

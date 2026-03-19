@@ -215,6 +215,7 @@ export default function Index() {
           type="video"
           startTime={0}
           title="Bienvenidos el Museo Popular de Siloé"
+          showButtonHome={false}
           src="https://chocolate-lazy-marsupial-15.mypinata.cloud/ipfs/QmP3t9vcgNKKMZ5ARy7PSx4wUxAQZhZxXLeCwMj8UrvhvU"
         />
 
