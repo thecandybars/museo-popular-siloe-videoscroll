@@ -9,6 +9,7 @@ import Index from "./Index";
 import VideoScroll from "./VideoPlayer/VideoScroll";
 import VideoPlayer from "./VideoPlayer/VideoPlayer";
 import type { Scene, SceneId, ScrollScene } from "./types";
+import { Box } from "@mui/material";
 
 const NotFoundPage = () => (
   <div>
