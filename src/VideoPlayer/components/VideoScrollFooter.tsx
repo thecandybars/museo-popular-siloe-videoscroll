@@ -16,10 +16,14 @@ export default function VideoScrollFooter({
   const renderHelpDialog = (
     <Dialog
       open={openHelp}
+      fullScreen
+      fullWidth
       onClose={() => setOpenHelp(false)}
       sx={{
         "& .MuiPaper-root": {
-          background: "transparent", // Makes the dialog content background transparent
+          bgcolor: "transparent",
+          backdropFilter: "blur(16px)",
+          WebkitBackdropFilter: "blur(16px)",
         },
       }}
     >
@@ -28,10 +32,10 @@ export default function VideoScrollFooter({
         gap={4}
         alignItems={"center"}
         sx={{
+          justifyContent: "center",
+          alignItems: "center",
           color: "white",
-          bgcolor: "transparent",
-          backdropFilter: "blur(16px)",
-          WebkitBackdropFilter: "blur(16px)",
+          height: "100%",
         }}
       >
         <img src="/navegacion.svg" height="100px" width="100px" />

@@ -39,7 +39,7 @@ const App = () => {
           path="/museo"
           element={
             <VideoPlayer
-              src="https://chocolate-lazy-marsupial-15.mypinata.cloud/ipfs/QmP3t9vcgNKKMZ5ARy7PSx4wUxAQZhZxXLeCwMj8UrvhvU"
+              src="https://chocolate-lazy-marsupial-15.mypinata.cloud/ipfs/QmYnibhCMMHFWfe6TFtU8vpcX5sbyLP63cKVKd8rrWNZLd"
               title="Museo de Siloé"
               type="video"
               startTime={0}

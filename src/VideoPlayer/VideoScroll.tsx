@@ -5,7 +5,9 @@ import ScrollyVideo from "scrolly-video/dist/ScrollyVideo.esm.jsx";
 import VideoScrollFooter from "./components/VideoScrollFooter";
 import LoadingAnimation from "./components/LoadingAnimation";
 import type { ScrollScene, WheelDirection } from "../types";
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
+import { Home } from "@mui/icons-material";
 
 interface VideoScrollProps extends ScrollScene {
   nextSrc?: string;
@@ -286,16 +288,41 @@ export default function VideoScroll({
           }}
         />
       )}
-
-      <Box position="fixed" top="24px" left="12px">
+      <Stack
+        direction="row"
+        gap={2}
+        position="fixed"
+        top="24px"
+        left="12px"
+        width="600px"
+      >
+        <Button
+          variant="contained"
+          component={Link}
+          to="/"
+          sx={{
+            py: 1,
+            px: 2,
+            bgcolor: "#00000080",
+            backdropFilter: "blur(32px)",
+            WebkitBackdropFilter: "blur(32px)",
+            borderRadius: "10px",
+            "&:hover": {
+              bgcolor: "#000000cc",
+            },
+          }}
+        >
+          <Home fontSize="large" sx={{ color: "white" }} />
+        </Button>
         <Typography
           variant="h4"
           color="white"
           sx={{
             display: "flex",
-            flex: 0.9,
-            py: 3,
-            px: 3,
+            alignItems: "center",
+            // flex: 0.9,
+            py: 1,
+            px: 2,
             bgcolor: "#00000080",
             backdropFilter: "blur(32px)",
             WebkitBackdropFilter: "blur(32px)",
@@ -304,7 +331,7 @@ export default function VideoScroll({
         >
           {title}
         </Typography>
-      </Box>
+      </Stack>
 
       {renderNavigationHotspots}
 
