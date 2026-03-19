@@ -28,6 +28,7 @@ export interface VideoScene extends BaseScene {
   type: "video";
   startTime: number;
   showButtonHome?: boolean;
+  coverImage?: string;
 }
 
 export type Scene = ScrollScene | VideoScene;

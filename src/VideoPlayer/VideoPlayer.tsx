@@ -16,6 +16,7 @@ export default function VideoPlayer({
   title,
   startTime = 0,
   showButtonHome = true,
+  coverImage,
   // map,
 }: VideoScene) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -238,6 +239,18 @@ export default function VideoPlayer({
           margin: "auto",
         }}
       >
+        {coverImage && !hasStarted && (
+          <img
+            src={coverImage}
+            style={{
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              objectPosition: "center center",
+              objectFit: "cover",
+            }}
+          />
+        )}
         <Box
           component="video"
           ref={videoRef}
@@ -255,46 +268,6 @@ export default function VideoPlayer({
             cursor: "pointer",
           }}
         />
-
-        {/* <Box
-          sx={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            px: 2,
-            py: 1.5,
-            opacity: showOverlayUi ? 1 : 0,
-            transition: "opacity 0.25s ease",
-            pointerEvents: "none",
-            background:
-              "linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.28), rgba(0,0,0,0))",
-          }}
-        >
-          {title && (
-            <Typography
-              sx={{
-                bgcolor: "#000000aa",
-                backdropFilter: "blur(8px)",
-                WebkitBackdropFilter: "blur(8px)",
-                borderRadius: 0,
-                borderTopRightRadius: "40px",
-                borderBottomRightRadius: "40px",
-                width: "max-content",
-                pl: 1,
-                pr: 6,
-                py: 1,
-                fontFamily: "Roboto",
-                color: "white",
-                fontSize: "clamp(0.95rem, 1.4vw, 1.25rem)",
-                // fontWeight: 600,
-                textShadow: "0 1px 4px rgba(0,0,0,0.5)",
-              }}
-            >
-              {title}
-            </Typography>
-          )}
-        </Box> */}
 
         <Stack
           direction="row"
