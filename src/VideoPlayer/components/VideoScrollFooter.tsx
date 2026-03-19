@@ -125,7 +125,7 @@ export default function VideoScrollFooter({
           >
             <HelpIcon fontSize="small" sx={{ color: "#ffffff80" }} />
           </Button>
-          <Button
+          {/* <Button
             sx={{
               border: "0.5px solid #FCFAF5",
               bgcolor: "transparent",
@@ -139,7 +139,7 @@ export default function VideoScrollFooter({
             onClick={onFullscreen}
           >
             <FullscreenIcon fontSize="small" sx={{ color: "#ffffff80" }} />
-          </Button>
+          </Button> */}
         </Stack>
       </Stack>
       {renderHelpDialog}
